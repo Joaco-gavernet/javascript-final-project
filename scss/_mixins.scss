@@ -1,0 +1,12 @@
+@mixin flex ($display, $flow, $jc, $ac){
+	display: $display;
+	flex-flow: $flow;
+	justify-content: $jc;
+	align-content: $ac;
+}
+
+@mixin font ($size, $weight, $tt){
+	font-size: $size;
+	font-weight: $weight;
+	text-transform: $tt;
+}

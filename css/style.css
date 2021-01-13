@@ -1,0 +1,125 @@
+/* Resets */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Bebas Neue", cursive;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #D0E1D4;
+}
+
+/* Body */
+body {
+  display: grid;
+}
+
+.container {
+  max-width: 70vw;
+  margin: 0 15vw 0 15vw;
+}
+
+/* Inicio */
+.portada {
+  background: url('../img/libros.jpg');
+  /* background-attachment: fixed; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+}
+
+.portada::before {
+  content: "";
+  display: block;
+  background: #00000008;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.portada__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+  /* background: #D0E1D426; */
+  /* border-bottom: solid black 1px; */
+  position: relative;
+  z-index: 1;
+}
+
+.nav__ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: bisque;
+}
+
+.nav__ulLi {
+  margin-left: 3vw;
+}
+
+.portada__heading {
+  /* color: bisque; */
+  color: #fffdf8;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  position: relative;
+  z-index: 1;
+}
+
+.portada__headingH1 {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.conocenos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+  background: #F8F1F5;
+  /* background: #85D661; */
+}
+
+.conocenos__img {
+  width: 40%;
+  max-width: 480px;
+}
+
+.conocenos__div {
+  width: 55%;
+}
+
+.conocenos__h2 {
+  /* color: #ffba65; */
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 900;
+  position: relative;
+}
+
+.conocenos__p {
+  font-size: 1.1rem;
+  width: 80%;
+}
+
+.videoConocenos {
+  height: auto;
+}
