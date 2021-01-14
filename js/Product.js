@@ -18,8 +18,22 @@ class Product {
     `);
   }
 
+  // Metodo para imprimir en la consola referencias de los productos mas resumidas y no tan extensas como "getProductData"
+  getProductReferences() {
+    console.log(this.productId, this.productTitle);
+  }
+
   getProductPrice() {
     console.log(`
     El precio del producto es: ${this.productPrice}.`)
+  }
+
+  getProductStock() {
+    console.log(`
+    Cantidad en stock del producto: ${this.productStock}.`)
+  }
+
+  changeStock(input) {
+    this.productStock += input;
   }
 }
