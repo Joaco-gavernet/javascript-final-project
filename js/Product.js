@@ -1,12 +1,21 @@
 class Product {
-  constructor(x) {
-    this.productName = x.productName;
-    this.productPrice = x.productPrice;
-    this.productId = x.productId;
+  constructor(productData) {
+    this.productTitle = productData.title;
+    this.productPrice = productData.price;
+    this.productAuthor = productData.author;
+    this.productEditorial = productData.editorial;
+    this.productId = productData.id;
+    this.productStock = productData.stock;
   }
 
-  getProduct() {
-    console.log(`Titulo: ${this.productName}, precio: ${this.productPrice}, codigo: ${this.productId}`);
+  getProductData() {
+    console.log(`ID: ${this.productId}
+    Titulo: ${this.productTitle}
+    Precio: ${this.productPrice}
+    Autor: ${this.productAuthor}
+    Editorial: ${this.productEditorial}
+    Cantidad: ${this.productStock}
+    `);
   }
 
   getProductPrice() {
