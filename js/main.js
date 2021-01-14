@@ -82,14 +82,16 @@ let productData = [
 // console.log(productInstancer(productData, productData.id));
 
 // Defino las instancias de los objetos manualmente porque no pude plantear una funcion que les asigne un nombre acorde a la cantidad de productos instanciados en base al Json "products". 
-let product1 = new Product(productData[0]);
-let product2 = new Product(productData[1]);
+// let product1 = new Product(productData[0]);
+// let product2 = new Product(productData[1]);
 
 // Intento hacer un loop para definir las instancias y los nombres de las variables instanciadas automaticamente.
-// for (let i = 0; i < productData; i++){
-//   let product[i] = new Product(productData[i])
-//   return product[i]
-// }
+// Defino la variable que indica la longitud del Json "productData" para pasarla como detonante en el parametro del "for"
+let size = productData.length;
+for (let i = 0; i < size; i++){
+  let example = new Product(productData[i]);
+  console.log(example);
+}
 
 // // Declaro una funcion que te devuelve los valores de referencia de la instancia ya creada. Es poco practico ya que deberia poder ser integrado como metodo en cada una de las instancias pero funciona. 
 // let printProductReferences = x => console.log(x.productId, x.productTitle);
@@ -102,15 +104,15 @@ let product2 = new Product(productData[1]);
 // printProductReferences(product2);
 
 
-// Ejecucion del carrito de compras
-let carrito = new Cart();
-// Agrego productos al carrito
-carrito.addNewProduct(product1, 1);
-carrito.addNewProduct(product2, 5);
-// Muestro el carrito
-carrito.getCart();
-carrito.getTotal();
+// // Ejecucion del carrito de compras
+// let carrito = new Cart();
+// // Agrego productos al carrito
+// carrito.addNewProduct(product1, 1);
+// carrito.addNewProduct(product2, 5);
+// // Muestro el carrito
+// carrito.getCart();
+// carrito.getTotal();
 
 
-// Ejemplo de recargo de stock
-product2.changeStock(+15);
+// // Ejemplo de recargo de stock
+// product2.changeStock(+15);
