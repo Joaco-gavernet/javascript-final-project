@@ -1,7 +1,12 @@
-@import "_vars.scss";
-@import "_mixins.scss";
+// RESETS
 @import "_resets.scss";
-@import "_body.scss";
-@import "_contenedor.scss";
-@import "_nav.scss";
+// VARS
+@import "_vars.scss";
+// MIXINS
+@import "_mixins.scss";
+// BODY
+// @import "_body.scss";
+// FRONT
 @import "_front.scss";
+// FOOTER
+@import "_footer.scss";

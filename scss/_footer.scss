@@ -1,0 +1,12 @@
+// FOOTER
+.footerDesktop {
+  height: 70vh;
+  background: $color-ddl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .footerDesktop__img {
+    width: 80px;
+  }
+}
