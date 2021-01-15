@@ -1,3 +1,4 @@
+/* Resets */
 *{
   padding: 0;
   margin: 0;
@@ -5,16 +6,11 @@
   font-family: "Bebas Neue", cursive;
 }
 
-a{
-  text-decoration: none; 
-  color: inherit; 
-  text-decoration: inherit;
-}
+a {
+  text-decoration: none;
+  color: inherit;
 
-a:hover{
-  color: #93a1b8;
-}
-
-ul {
-  list-style-type: none;
+  &:hover {
+    color: #D0E1D4;
+  }
 }
