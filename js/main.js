@@ -3,21 +3,21 @@
 // // Defino el array de clientes en formato Json. No estoy seguro de la utilidad de este array, no se si me sirve todavia para juntar informacion sobre los clientes que compran. 
 // let clientData = [
 //   {
-//   name: "Joaquin",
-//   surname: "Gavernet",
-//   phone: "11 3248-8780",
-//   // En este caso, el usuario tiene instagram, pero puede no tenerlo
-//   "instagram": "joaco_gavernet"
+//     "name": "Joaquin",
+//     "surname": "Gavernet",
+//     "phone": "11 3248-8780",
+//     //  En este caso, el usuario tiene instagram, pero puede no tenerlo
+//     "instagram": "joaco_gavernet"
 //   },
 //   {
-//   name: "Nicolas",
-//   surname: "Serrano",
-//   phone: "221 234-4358"
+//     "name": "Nicolas",
+//     "surname": "Serrano",
+//     "phone": "221 234-4358"
 //   },
 //   {
-//   name: "Haroldo",
-//   surname: "Gavernet",
-//   phone: "11 5008-0560"
+//     "name": "Haroldo",
+//     "surname": "Gavernet",
+//     "phone": "11 5008-0560"
 //   }
 // ];
 
@@ -42,28 +42,49 @@
 //   productId : id;
 //   productDisponibility : condition;
 // };
+
+// function productDataConstructorB (title, price, author, editorial, id, condition) {
+//   let item = `
+//   productName: "${title}",
+//   productPrice: "${price}",
+//   productAuthor: "${author}",
+//   productEditorial: "${editorial}",
+//   productId: "${id}",
+//   prductStock: "${condition}"
+//   `
+//   JSON.parse(item);
+//   return item;
+// }
+
 // {productDataConstructor("La sombra del viento", "1500", "Carlos Ruiz Zafon", "Planeta", "#AAA002", true)}
+
+
 
 // Defino el array de productos en formato Json
 let productData = [
   // Array al que van a ingresar los productos que quiero que figuren en la pagina
   {
-    title: "El principito",
-    price: "1000",
-    author: "Marcos",
-    editorial: "Marea",
-    id: "#AAA000",
-    stock: 10
+    "title": "El principito",
+    "price": "1000",
+    "author": "Marcos",
+    "editorial": "Marea",
+    "id": "#AAA000",
+    "stock": 10
   }, 
   {
-    title: "Las malas",
-    price: "1500",
-    author: "Silvia",
-    editorial: "Planeta",
-    id: "#AAA001",
-    stock: 10
+    "title": "Las malas",
+    "price": "1500",
+    "author": "Silvia",
+    "editorial": "Planeta",
+    "id": "#AAA001",
+    "stock": 10
   }
 ]
+
+// // Intento mostrar el producto agregado por la funcion para agregar productos al JSON
+// console.log(productData);
+// productData.push(productDataConstructorB("21 lecciones para el siglo 21", "2000", "Yuval Noah Harari", "", "#AAA002", "true"));
+// console.log(productData[2]);
 
 // // Muestro los productos
 // console.log('Productos:');
