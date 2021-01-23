@@ -1,4 +1,6 @@
-[
+// Defino el array de productos en formato Json
+let productData = [
+    // Array al que van a ingresar los productos que quiero que figuren en la pagina
   {
     "title": "El principito",
     "price": "1000",

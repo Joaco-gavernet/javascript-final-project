@@ -58,29 +58,6 @@
 
 // {productDataConstructor("La sombra del viento", "1500", "Carlos Ruiz Zafon", "Planeta", "#AAA002", true)}
 
-
-
-// Defino el array de productos en formato Json
-let productData = [
-  // Array al que van a ingresar los productos que quiero que figuren en la pagina
-  {
-    "title": "El principito",
-    "price": "1000",
-    "author": "Marcos",
-    "editorial": "Marea",
-    "id": "#AAA000",
-    "stock": 10
-  }, 
-  {
-    "title": "Las malas",
-    "price": "1500",
-    "author": "Silvia",
-    "editorial": "Planeta",
-    "id": "#AAA001",
-    "stock": 10
-  }
-]
-
 // // Intento mostrar el producto agregado por la funcion para agregar productos al JSON
 // console.log(productData);
 // productData.push(productDataConstructorB("21 lecciones para el siglo 21", "2000", "Yuval Noah Harari", "", "#AAA002", "true"));
@@ -106,24 +83,13 @@ let productData = [
 // let product1 = new Product(productData[0]);
 // let product2 = new Product(productData[1]);
 
-// Intento hacer un loop para definir las instancias y los nombres de las variables instanciadas automaticamente.
-// Defino la variable que indica la longitud del Json "productData" para pasarla como detonante en el parametro del "for"
-let size = productData.length;
-for (let i = 0; i < size; i++){
-  let example = new Product(productData[i]);
-  console.log(example);
-}
-
-// // Declaro una funcion que te devuelve los valores de referencia de la instancia ya creada. Es poco practico ya que deberia poder ser integrado como metodo en cada una de las instancias pero funciona. 
-// let printProductReferences = x => console.log(x.productId, x.productTitle);
-
-// // Declaro otra funcion que unicamente devuelve el Id
-// let getProductId = x => x.productId;
-
-// // Llamo a la funcion
-// printProductReferences(product1);
-// printProductReferences(product2);
-
+// // Intento hacer un loop para definir las instancias y los nombres de las variables instanciadas automaticamente.
+// // Defino la variable que indica la longitud del Json "productData" para pasarla como detonante en el parametro del "for"
+// let size = productData.length;
+// for (let i = 0; i < size; i++){
+//   let example = new Product(productData[i]);
+//   console.log(example);
+// }
 
 // // Ejecucion del carrito de compras
 // let carrito = new Cart();
