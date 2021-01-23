@@ -125,44 +125,10 @@
 
 
 function productBuilder(product) {
-  // let liProducto = document.createElement('li');
-  // let contenedorProducto = document.createElement('div');
-  // let portada = document.createElement('img');
-  // let contenedorInfo = document.createElement('div');
-  // let title = document.createElement('h2');
-  // let author = document.createElement('h4');
-  // let editorial = document.createElement('h4');
-  // let description = document.createElement('p');
-  // let price = document.createElement('h3')
-  // let input = document.createElement('input');
-
-
-  // portada.src = product.img;
-  // title.textContent = product.title;
-  // author.textContent = product.author;
-  // editorial.textContent = product.editorial;
-  // description.textContent = product.description;
-  // price.textContent = product.price;
-  // input.type = "button";
-  // input.value = "Agregar";
-
-  // liProducto.appendChild(contenedorProducto);
-  // contenedorProducto.appendChild(portada);
-  // contenedorProducto.appendChild(contenedorInfo);
-  // contenedorInfo.appendChild(title);
-  // contenedorInfo.appendChild(author);
-  // contenedorInfo.appendChild(editorial);
-  // contenedorInfo.appendChild(description);
-  // contenedorInfo.appendChild(price);
-  // contenedorInfo.appendChild(input);
-
-  // return liProducto;
-
   let result = `
-  <li class="productosCatalogo_ulLi">
-    <div>
+  <li class="productosCatalogo__ulLi">
       <img src="${product.img}" alt="Portada de libro" class="productImg">
-      <div>
+      <div class="product">
         <h2 class="productTitle">${product.title}</h2>
         <h4 class="productSubtitle">${product.author}</h4>
         <h4 class="productSubtitle">${product.editorial}</h4>
@@ -170,20 +136,19 @@ function productBuilder(product) {
         <h3 class="productPrice">${product.price}</h3>
         <input type="button" id="buttonComprar" value="Agregar" class="productButton">
       </div>
-    </div>
   </li>
   `;
   return result;
 }
 
-let contenedorCatalogo = document.querySelector('.productosCatalogo_ul');
+let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
 
-productData.forEach(function (product){
-  if (product.isActive) {
-    contenedorCatalogo.innerHTML += productBuilder(product);
-  }
-})
+// productData.forEach(function (product){
+//   if (product.isActive) {
+//     contenedorCatalogo.innerHTML += productBuilder(product);
+//   }
+// })
 
 
 
-// FIN DE INTENTO - FUNCION PARA CONTRUIR LOS PRODUCTOS -------------------------------------------
+// FIN DE INTENTO - FUNCION PARA CONSTRUIR LOS PRODUCTOS -------------------------------------------

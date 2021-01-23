@@ -72,7 +72,26 @@
   }
 }
 
-.productosCatalogo {
-  height: 80vh;
-  background: #dfd3bcf1;
+.productosCatalogo__ul {
+
+  .productosCatalogo__ulLi {
+    background: #f0eae0cb;
+    width: 100%;
+    height: 70vh;
+    @include flex(flex, nowrap, center, center)
+
+    .productImg {
+      // height: auto;
+      width: 40%;
+    }
+    
+    .product {
+      display: block;
+      width: 70%;
+      
+      .productTitle {
+        font-size: 2rem;
+      }
+    }
+  }
 }

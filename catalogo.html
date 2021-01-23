@@ -39,9 +39,19 @@
   </main>
 
   <div class="productosCatalogo">
-    <ul class="productosCatalogo_ul">
+    <ul class="productosCatalogo__ul">
 
-
+      <li class="productosCatalogo__ulLi">
+          <img src="img/padre-rico-padre-pobre.png" alt="" class="productImg">
+          <div class="product">
+            <h2 class="productTitle">${product.title}</h2>
+            <h4 class="productSubtitle">${product.author}</h4>
+            <h4 class="productSubtitle">${product.editorial}</h4>
+            <p class="productDescription">${product.description}</p>
+            <h3 class="productPrice">${product.price}</h3>
+            <input type="button" id="buttonComprar" value="Agregar" class="productButton">
+          </div>
+      </li>
 
     </ul>
   </div>

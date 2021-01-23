@@ -83,6 +83,34 @@ a:hover {
   font-style: italic;
 }
 
+.conocenos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: #73937Ecd;
+}
+.conocenos .conocenos__div {
+  width: 70%;
+}
+.conocenos .conocenos__div .conocenos__h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 1.5rem;
+}
+.conocenos .conocenos__div .conocenos__p {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: normal;
+  text-align: center;
+}
+
+.videoConocenos {
+  height: auto;
+}
+
 .portadaCatalogo {
   background: url("../img/cartel-zoom.jpg");
   background-size: cover;
@@ -151,32 +179,23 @@ a:hover {
   font-style: italic;
 }
 
-.conocenos {
+.productosCatalogo__ul .productosCatalogo__ulLi {
+  background: #f0eae0cb;
+  width: 100%;
+  height: 70vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  background: #73937Ecd;
+  flex-flow: nowrap;
 }
-.conocenos .conocenos__div {
+.productosCatalogo__ul .productosCatalogo__ulLi img {
+  height: auto;
+  width: 30%;
+}
+.productosCatalogo__ul .productosCatalogo__ulLi .product {
+  display: block;
   width: 70%;
 }
-.conocenos .conocenos__div .conocenos__h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 1.5rem;
-}
-.conocenos .conocenos__div .conocenos__p {
-  font-size: 1rem;
-  font-weight: 400;
-  text-transform: normal;
-  text-align: center;
-}
-
-.videoConocenos {
-  height: auto;
+.productosCatalogo__ul .productosCatalogo__ulLi .product .productTitle {
+  font-size: 2rem;
 }
 
 .footerDesktop {
