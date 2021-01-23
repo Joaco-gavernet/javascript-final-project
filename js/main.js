@@ -1,26 +1,4 @@
 // OBJETO CLIENTE ------------------------------------
-
-// // Defino el array de clientes en formato Json. No estoy seguro de la utilidad de este array, no se si me sirve todavia para juntar informacion sobre los clientes que compran. 
-// let clientData = [
-//   {
-//     "name": "Joaquin",
-//     "surname": "Gavernet",
-//     "phone": "11 3248-8780",
-//     //  En este caso, el usuario tiene instagram, pero puede no tenerlo
-//     "instagram": "joaco_gavernet"
-//   },
-//   {
-//     "name": "Nicolas",
-//     "surname": "Serrano",
-//     "phone": "221 234-4358"
-//   },
-//   {
-//     "name": "Haroldo",
-//     "surname": "Gavernet",
-//     "phone": "11 5008-0560"
-//   }
-// ];
-
 // // Muestro los clientes
 // console.log('Clientes:');
 // // value equivale al Json de clientes que ingresa en cada uno de los ciclos, llamados por el .forEach()
@@ -34,14 +12,6 @@
 // FIN OBJETO CLIENTE ---------------------------------
 
 // Intento de funcion para definir los productos
-// let productDataConstructor = (title, price, author, editorial, id, condition) => {
-//   productName : title;
-//   productPrice : price;
-//   productAuthor : author;
-//   productEditorial : editorial;
-//   productId : id;
-//   productDisponibility : condition;
-// };
 
 // function productDataConstructorB (title, price, author, editorial, id, condition) {
 //   let item = `
@@ -63,14 +33,14 @@
 // productData.push(productDataConstructorB("21 lecciones para el siglo 21", "2000", "Yuval Noah Harari", "", "#AAA002", "true"));
 // console.log(productData[2]);
 
-// // Muestro los productos
-// console.log('Productos:');
-// productData.forEach(function (i) {
-//   // If para chequear que el producto este disponible y lo imprimo en la consola
-//   if (i.stock > 0) {
-//     return new Product(i).getProductData();
-//   }
-// })
+// Muestro los productos
+console.log('Productos:');
+productData.forEach(function (i) {
+  // If para chequear que el producto este disponible y lo imprimo en la consola
+  if (i.stock > 0) {
+    return new Product(i).getProductData();
+  }
+})
 
 // Intento de definir una variable tomando el "id" de cada instancia del objeto y poder llamarlo con ese nombre. Esto es por que en el caso anterior en el que instancio al objeto Product.js y lo imprimo en la consola con su metodo, no puedo volver a llamar a cada una de las instancias por su nombre
 // function productInstancer (i, x) {
