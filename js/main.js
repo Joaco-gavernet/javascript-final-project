@@ -1,4 +1,5 @@
 // OBJETO CLIENTE ------------------------------------
+
 // // Muestro los clientes
 // console.log('Clientes:');
 // // value equivale al Json de clientes que ingresa en cada uno de los ciclos, llamados por el .forEach()
@@ -11,65 +12,100 @@
 
 // FIN OBJETO CLIENTE ---------------------------------
 
-// Intento de funcion para definir los productos
 
-// function productDataConstructorB (title, price, author, editorial, id, condition) {
+
+
+
+// INTENTO - FUNCION PARA DEFINIR PRODUCTOS ------------------------------------
+
+// function productDataConstructorB (title, price, author, editorial, id, stock) {
 //   let item = `
-//   productName: "${title}",
-//   productPrice: "${price}",
-//   productAuthor: "${author}",
-//   productEditorial: "${editorial}",
-//   productId: "${id}",
-//   prductStock: "${condition}"
+//   productName: ${title},
+//   productPrice: ${price},
+//   productAuthor: ${author},
+//   productEditorial: ${editorial},
+//   productId: ${id},
+//   prductStock: ${stock}
 //   `
-//   JSON.parse(item);
-//   return item;
+//   let finalItem = stringify(item);
+//   // let finalItem = JSON.parse(item);
+//   console.log(typeof finalItem);
 // }
 
-// {productDataConstructor("La sombra del viento", "1500", "Carlos Ruiz Zafon", "Planeta", "#AAA002", true)}
+// let productExample = productDataConstructorB("La sombra del viento", "1500", "Carlos Ruiz Zafon", "Planeta", "#AAA002", 2);
 
-// // Intento mostrar el producto agregado por la funcion para agregar productos al JSON
-// console.log(productData);
+// // Intento mostrar el producto
+// console.log(productExample);
+
 // productData.push(productDataConstructorB("21 lecciones para el siglo 21", "2000", "Yuval Noah Harari", "", "#AAA002", "true"));
-// console.log(productData[2]);
+
+// FIN DE INTENTO - FUNCION PARA DEFINIR PRODUCTOS ------------------------------------
+
+
+
+
+
 
 // Muestro los productos
 console.log('Productos:');
 productData.forEach(function (i) {
   // If para chequear que el producto este disponible y lo imprimo en la consola
-  if (i.stock > 0) {
+  if ((i.stock > 0) && (i.isActive)) {
     return new Product(i).getProductData();
   }
 })
 
-// Intento de definir una variable tomando el "id" de cada instancia del objeto y poder llamarlo con ese nombre. Esto es por que en el caso anterior en el que instancio al objeto Product.js y lo imprimo en la consola con su metodo, no puedo volver a llamar a cada una de las instancias por su nombre
+
+
+
+
+// INTENTO - FUNCION PARA INSTANCIAR AUTOMATICAMENTE LOS OBJETOS DE PRODUCTDATA.JS ------------------------------------
+
+
+// // Intento de definir una variable tomando el "id" de cada instancia del objeto para llamarlo con ese nombre. Esto es por que en el caso anterior en el que instancio al objeto Product.js y lo imprimo en la consola con su metodo, no puedo volver a llamar a cada una de las instancias por su nombre
 // function productInstancer (i, x) {
 //   window[x] = new Product(i);
 //   return window[x];
 // }
 // console.log(productInstancer(productData, productData.id));
 
-// Defino las instancias de los objetos manualmente porque no pude plantear una funcion que les asigne un nombre acorde a la cantidad de productos instanciados en base al Json "products". 
-// let product1 = new Product(productData[0]);
-// let product2 = new Product(productData[1]);
+
+// CONCLUSION: NO PUEDO HACER VARIAR EL NOMBRE DE LA VARIABLE SEGUN EL CONTADOR
+
+
+// FIN DE INTENTO ------------------------------------
+
+
+
+
+
 
 // // Intento hacer un loop para definir las instancias y los nombres de las variables instanciadas automaticamente.
-// // Defino la variable que indica la longitud del Json "productData" para pasarla como detonante en el parametro del "for"
+// // Defino la variable que indica la longitud del JSON "productData" para pasarla como detonante en el parametro del "for"
 // let size = productData.length;
 // for (let i = 0; i < size; i++){
 //   let example = new Product(productData[i]);
 //   console.log(example);
 // }
 
+
+
+
+
+// // Defino las instancias de los objetos manualmente porque no pude plantear una funcion que les asigne un nombre acorde a la cantidad de productos instanciados en base al JSON "productData.js". 
+// let product1 = new Product(productData[0]);
+// let product2 = new Product(productData[1]);
+
 // // Ejecucion del carrito de compras
 // let carrito = new Cart();
+
 // // Agrego productos al carrito
 // carrito.addNewProduct(product1, 1);
 // carrito.addNewProduct(product2, 5);
+
 // // Muestro el carrito
 // carrito.getCart();
 // carrito.getTotal();
-
 
 // // Ejemplo de recargo de stock
 // product2.changeStock(+15);

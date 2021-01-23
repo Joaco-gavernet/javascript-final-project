@@ -7,7 +7,8 @@ let productData = [
     "author": "Marcos",
     "editorial": "Marea",
     "id": "#AAA000",
-    "stock": 10
+    "stock": 10,
+    "isActive": true
   }, 
   {
     "title": "Las malas",
@@ -15,6 +16,7 @@ let productData = [
     "author": "Silvia",
     "editorial": "Planeta",
     "id": "#AAA001",
-    "stock": 10
+    "stock": 10,
+    "isActive": true
   }
 ]
