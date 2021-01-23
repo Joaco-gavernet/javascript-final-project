@@ -83,6 +83,74 @@ a:hover {
   font-style: italic;
 }
 
+.portadaCatalogo {
+  background: url("../img/cartel-zoom.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  height: 80vh;
+}
+.portadaCatalogo::after {
+  content: "";
+  display: block;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 36%, rgba(0, 0, 0, 0.7) 100%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.portadaCatalogo .portada__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 15vh;
+  position: relative;
+  z-index: 1;
+}
+.portadaCatalogo .portada__nav .nav__img {
+  width: 70px;
+}
+.portadaCatalogo .portada__nav .nav__ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #dfd3bcf1;
+}
+.portadaCatalogo .portada__nav .nav__ul .nav__ulLi {
+  margin-left: 3vw;
+}
+.portadaCatalogo .portada__heading {
+  color: #fffdf8;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 10vw;
+  z-index: 1;
+}
+.portadaCatalogo .portada__heading .portada__headingH1 {
+  width: 60%;
+  text-align: center;
+  font-size: 5.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 5px;
+}
+.portadaCatalogo .portada__heading .portada__headingH4 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
 .conocenos {
   display: flex;
   justify-content: center;
