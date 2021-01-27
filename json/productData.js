@@ -8,7 +8,7 @@ let productData = [
     "editorial": "Marea",
     "description": "El libro cuenta las enseñanzas de los “2 padres” del autor, el biológico que es un profesor que defiende el sistema de estudia, trabaja, trabaja más y llegarás algo, y el padre de un amigo que le instruye en el arte de poner el dinero a trabajar para ti.",
     "img": "img/principito.png",
-    "id": "#AAA000",
+    "id": "AAA000",
     "stock": 10,
     "isActive": true
   },
@@ -19,7 +19,7 @@ let productData = [
     "editorial": "Planeta",
     "description": "El libro cuenta las enseñanzas de los “2 padres” del autor, el biológico que es un profesor que defiende el sistema de estudia, trabaja, trabaja más y llegarás algo, y el padre de un amigo que le instruye en el arte de poner el dinero a trabajar para ti.",
     "img": "img/las-malas.png",
-    "id": "#AAA001",
+    "id": "AAA001",
     "stock": 10,
     "isActive": true
   },
@@ -30,7 +30,7 @@ let productData = [
     "editorial": "Aguilar",
     "description": "El libro cuenta las enseñanzas de los “2 padres” del autor, el biológico que es un profesor que defiende el sistema de estudia, trabaja, trabaja más y llegarás algo, y el padre de un amigo que le instruye en el arte de poner el dinero a trabajar para ti.",
     "img": "img/padre-rico-padre-pobre.png",
-    "id": "#AAA002",
+    "id": "AAA002",
     "stock": 12,
     "isActive": true
   }

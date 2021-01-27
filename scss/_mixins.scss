@@ -3,7 +3,7 @@
 	display: $display;
 	flex-flow: $flow;
 	justify-content: $jc;
-	align-content: $ac;
+	align-items: $ac;
 }
 
 @mixin font ($size, $weight, $tt){

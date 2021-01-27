@@ -118,37 +118,62 @@
 
 
 /* CONSIGNAS:
-  - Construir el contenedor en HTML donde van a estar ubicados los productos del
-  - Guardar en una variable el contenedor
-  - 
+- Construir el contenedor en HTML donde van a estar ubicados los productos del
+- Guardar en una variable el contenedor
+- 
 */
-
-
+ 
+ 
+let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
+ 
 function productBuilder(product) {
-  let result = `
+  return `
   <li class="productosCatalogo__ulLi">
-      <img src="${product.img}" alt="Portada de libro" class="productImg">
+      <img src="${product.img}" alt="Portada de libro" class="productImage">
       <div class="product">
         <h2 class="productTitle">${product.title}</h2>
-        <h4 class="productSubtitle">${product.author}</h4>
-        <h4 class="productSubtitle">${product.editorial}</h4>
+        <h4 class="productAuthor">Autor: ${product.author}</h4>
+        <h4 class="productEditorial">Editorial: ${product.editorial}</h4>
         <p class="productDescription">${product.description}</p>
-        <h3 class="productPrice">${product.price}</h3>
-        <input type="button" id="buttonComprar" value="Agregar" class="productButton">
+        <h3 class="productPrice">$${product.price}</h3>
+        <input type="button" value="Agregar" class="productButton" data-id="${product.id}">
       </div>
   </li>
   `;
-  return result;
 }
 
-let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
-
-// productData.forEach(function (product){
-//   if (product.isActive) {
-//     contenedorCatalogo.innerHTML += productBuilder(product);
-//   }
-// })
-
+productData.forEach(function (product){
+  if (product.isActive) {
+    contenedorCatalogo.innerHTML += productBuilder(product);
+  }
+})
 
 
 // FIN DE INTENTO - FUNCION PARA CONSTRUIR LOS PRODUCTOS -------------------------------------------
+
+
+
+
+
+// INTENTO - SINCRONIZACION DEL BOTON
+
+
+let productButton = document.querySelectorAll('.productButton');
+let selectedProducts = [];
+
+
+
+// Encargada de asignar el producto al 'Cart.js'
+function addNewProduct (event) {
+  let productId = event.target.dataset.id;
+  let selectedProduct = productData.filter( (productDataItem) => {
+    (productDataItem.id == productId) ? (productDataItem) : false;
+  } )
+  selectedProducts.push(selectedProduct);
+}
+
+
+// Recorro la variable 'productButton' y le asigno a cada boton un 'EventListener'
+productButton.forEach( (button) => {
+  button.addEventListener('click', addNewProduct);
+})

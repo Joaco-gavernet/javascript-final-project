@@ -8,10 +8,12 @@ class Cart {
 
   getCart() {
     console.log(this.selection);
+    return this.selection;
   }
 
   getTotal() {
     console.log(this.total);
+    return this.total;
   }
 
   addNewProduct(demand, quantity) {
