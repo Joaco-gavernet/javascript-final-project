@@ -195,6 +195,10 @@ a:hover {
   color: #1a1a1a;
   background: #73937ef3;
   list-style: none;
+  display: none;
+}
+.selectedProducts .selectedProductsArrow {
+  width: 50px;
 }
 .selectedProducts .selectedProductsCart {
   width: 100px;

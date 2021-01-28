@@ -4,8 +4,11 @@ class Product {
     this.productPrice = productData.price;
     this.productAuthor = productData.author;
     this.productEditorial = productData.editorial;
+    this.productDescription = productData.description;
+    this.productImg = productData.img;
     this.productId = productData.id;
     this.productStock = productData.stock;
+    this.productIsActive = productData.isActive;
   }
 
   getProductData() {
