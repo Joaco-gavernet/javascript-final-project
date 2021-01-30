@@ -1,5 +1,5 @@
 // AGREGO PRODUCTOS
-productData.push(productDataConstructor("21 lecciones para el siglo 21", "2000", "Yuval Noah Harari", "Planeta", "Aca iria una descripcion del libro", "img/21-lecciones-siglo-21.png", "AAA002", "5", "true"))
+productData.push(productDataConstructor("21 lecciones para el siglo 21", "2000", "Yuval Noah Harari", "Planeta", "Aca iria una descripcion del libro", "img/21-lecciones-siglo-21.png", "AAA004", "5", "true"))
 ;
 // ------------------------------------
 
@@ -44,7 +44,7 @@ productData.push(productDataConstructor("21 lecciones para el siglo 21", "2000",
 // CONSTRUCCION DE PRODUCTOS
 let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
  
-productData.forEach(function (product){
+productData.forEach(function (product) {
   if (product.isActive) {
     contenedorCatalogo.innerHTML += productBuilder(product);
   }
@@ -66,7 +66,7 @@ var amount = 0;
 // Asigna el producto al 'Cart.js' buscandolo por su 'id', presente en la llamada del boton
 function addNewProduct (event) {
   let productId = event.target.dataset.id;
-  let selectedProduct = productData.filter( (productDataItem) => {
+  let selectedProduct = productData.find( (productDataItem) => {
     if (productDataItem.id == productId) {
       return productDataItem;
     }
