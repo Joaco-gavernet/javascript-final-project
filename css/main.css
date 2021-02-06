@@ -134,6 +134,13 @@ a:hover {
   justify-content: center;
   align-items: center;
 }
+.productosCatalogo .cartOpener {
+  background: #73937Ecd;
+  border-radius: 5px;
+  padding: 15px 25px;
+  width: 100px;
+  margin: 40px 0;
+}
 .productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi {
   width: 100%;
   display: flex;

@@ -32,7 +32,7 @@ productAAA000.getProductStock()
 
 
 // CONSTRUCCION DE PRODUCTOS HTML
-let contenedorCatalogo = $('.productosCatalogo__ul');
+let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
 
 // document.querySelector
  

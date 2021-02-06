@@ -8,13 +8,13 @@
   background: #f0eae0cb;
   @include flex(flex, wrap, center, center);
 
-  // .cartOpener {
-  //   background: $color-verde;
-  //   border-radius: 5px;
-  //   padding: 15px 25px;
-  //   width: 100px;
-  //   margin: 40px 0;
-  // }
+  .cartOpener {
+    background: $color-verde;
+    border-radius: 5px;
+    padding: 15px 25px;
+    width: 100px;
+    margin: 40px 0;
+  }
 
   // .cartCounter {
   //   font-size: 1rem;
