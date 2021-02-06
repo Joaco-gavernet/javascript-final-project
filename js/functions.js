@@ -1,6 +1,5 @@
 // FUNCION PARA DEFINIR PRODUCTOS ------------------------------------
 
-
 function productDataConstructor (titleInput, priceInput, authorInput, editorialInput, descriptionInput, imgInput, idInput, stockInput, activityInput) {
   let item = {
     title: titleInput,
@@ -17,16 +16,10 @@ function productDataConstructor (titleInput, priceInput, authorInput, editorialI
   return (item);
 }
 
-
 // FIN DE FUNCION PARA DEFINIR PRODUCTOS ------------------------------------
 
 
-
-
-
-
 // FUNCION - DOM BUILDER DE LOS PRODUCTOS EN PRODUCTDATA.JS ------------------------------------
-
 
 function productBuilder(product) {
   return `
@@ -44,49 +37,33 @@ function productBuilder(product) {
   `;
 }
 
-
 // FIN FUNCION - DOM BUILDER DE LOS PRODUCTOS EN PRODUCTDATA.JS ------------------------------------
 
 
 
 
 
-// INTENTO - FUNCION PARA INSTANCIAR AUTOMATICAMENTE LOS OBJETOS DE PRODUCTDATA.JS ------------------------------------
+//  --------------------------------------
+
+// Asigna el producto al 'Cart.js' buscandolo por su 'id', presente en la llamada del boton
+function selectItem (event) {
+  let productId = event.target.dataset.id;
+  let selectedProduct = arrayProductsObject.find(
+    arrayProductsObjectItem => arrayProductsObjectItem.productId == productId
+  )
+
+  // carrito.addNewProduct(selectedProduct, amount)
+  carrito.addNewProduct(selectedProduct, 1)
+}
+
+// FIN ------------------------------------
+
+// CONTAR CANTIDAD DE CLICKS EN PRODUCTOS ------------------------------------
+
+function selectItemQuantity() {
+  amount += 1;
+}
+
+// FIN --------------------------------------
 
 
-// Intento de definir una variable tomando el "id" de cada instancia del objeto para llamarlo con ese nombre. Esto es por que en el caso anterior en el que instancio al objeto Product.js y lo imprimo en la consola con su metodo, no puedo volver a llamar a cada una de las instancias por su nombre
-
-// function productInstancer (data, dataId) {
-//   function nameSetter (identificator) {
-//     return JSON.stringify(identificator)
-//   }
-
-//   let name = nameSetter(dataId);
-//   let [name] = new Product(data);
-//   return name;
-// }
-
-// console.log(productInstancer(productData, productData.id));
-
-
-// CONCLUSION: NO PUEDO HACER VARIAR EL NOMBRE DE LA VARIABLE SEGUN EL CONTADOR
-
-
-// FIN DE INTENTO ------------------------------------
-
-
-
-
-
-// INTENTO - LOOP PARA DEFINIR LAS INSTANCIAS Y LOS NOMBRES AUTOMATICAMENTE --------------------------------------
-
-
-// // Defino la variable que indica la longitud del JSON "productData" para pasarla como detonante en el parametro del "for"
-// let size = productData.length;
-// for (let i = 0; i < size; i++){
-//   let example = new Product(productData[i]);
-//   console.log(example);
-// }
-
-
-// FIN DE INTENTO ------------------------------------

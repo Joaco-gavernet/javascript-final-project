@@ -31,7 +31,7 @@
     }
     
     .nav__ul {
-      display: flex;
+      @include flex(flex, auto, center, center);
       list-style-type: none;
       font-size: 1.2rem;
       font-weight: 800;
@@ -42,6 +42,24 @@
       .nav__ulLi {
         margin-left: 3vw;
       }
+      
+      .cartOpener {
+        background: $color-verde;
+        border-radius: 5px;
+        width: 50px;
+        padding: 15px 25px;
+        margin-left: 3vw;
+      }
+    
+      // .cartCounter {
+      //   font-size: 1rem;
+      //   padding: 5px;
+      //   background: white;
+      //   border-radius: 50%;
+      //   color: $color-oscuro;
+      //   border: 1px solid black;
+      //   margin: -80px 0 0 -15px;
+      // }
     }
   }
 
@@ -62,6 +80,7 @@
       @include font(5.5rem, 800, uppercase);
       font-family: 'Anton', sans-serif;
       letter-spacing: 5px;
+      line-height: 1.2;
     }
 
     .portada__headingH4 {

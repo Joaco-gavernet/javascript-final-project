@@ -2,7 +2,6 @@ class Cart {
   constructor() {
     this.selection = [];
     this.total = 0;
-    // this.client = ;
   }
 
   getCart() {
@@ -16,12 +15,15 @@ class Cart {
   }
 
   addNewProduct(demand, quantity) {
-    this.selection.push(demand);
+    this.selection.push(demand.productId);
     let midTotal = demand.productPrice * quantity;
     this.total += midTotal;
-    // demand.changeStock(-quantity);
-    console.log(this.selection);
-    console.log(midTotal);
-    console.log(this.total);
+    demand.changeStock(-quantity);
+    console.log(`Selection: 
+    ${this.selection}`);
+    console.log(`MidTotal: 
+    ${midTotal}`);
+    console.log(`Total: 
+    ${this.total}`);
   }
 }

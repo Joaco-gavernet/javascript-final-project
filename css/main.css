@@ -46,6 +46,9 @@ a:hover {
 }
 .portada .portada__nav .nav__ul, .portadaCatalogo .portada__nav .nav__ul {
   display: flex;
+  flex-flow: auto;
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
   font-size: 1.2rem;
   font-weight: 800;
@@ -54,6 +57,12 @@ a:hover {
   color: #dfd3bcf1;
 }
 .portada .portada__nav .nav__ul .nav__ulLi, .portadaCatalogo .portada__nav .nav__ul .nav__ulLi {
+  margin-left: 3vw;
+}
+.portada .portada__nav .nav__ul .cartOpener, .portadaCatalogo .portada__nav .nav__ul .cartOpener {
+  background: #73937Ecd;
+  border-radius: 5px;
+  width: 40px;
   margin-left: 3vw;
 }
 .portada .portada__heading, .portadaCatalogo .portada__heading {
@@ -75,6 +84,7 @@ a:hover {
   text-transform: uppercase;
   font-family: "Anton", sans-serif;
   letter-spacing: 5px;
+  line-height: 1.2;
 }
 .portada .portada__heading .portada__headingH4, .portadaCatalogo .portada__heading .portada__headingH4 {
   font-size: 1.2rem;
@@ -116,26 +126,33 @@ a:hover {
   background-size: cover;
 }
 
-.productosCatalogo__ul .productosCatalogo__ulLi {
+.productosCatalogo {
   background: #f0eae0cb;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi {
   width: 100%;
   display: flex;
   flex-flow: nowrap;
   justify-content: center;
   align-items: center;
 }
-.productosCatalogo__ul .productosCatalogo__ulLi .productImage {
+.productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .productImage {
   max-width: 300px;
   margin: 50px;
+  border: 1px solid black;
 }
-.productosCatalogo__ul .productosCatalogo__ulLi .product {
+.productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .product {
   width: 50%;
   display: grid;
   margin: 50px 0;
   grid-template-columns: 1fr;
   color: #1a1a1a;
 }
-.productosCatalogo__ul .productosCatalogo__ulLi .product .productTitle {
+.productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .product .productTitle {
   font-size: 2.2rem;
   grid-area: 1/1/2/2;
   align-self: flex-end;
@@ -143,22 +160,22 @@ a:hover {
   font-weight: bold;
   text-transform: none;
 }
-.productosCatalogo__ul .productosCatalogo__ulLi .product .productAuthor, .productosCatalogo__ul .productosCatalogo__ulLi .product .productEditorial {
+.productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .product .productAuthor, .productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .product .productEditorial {
   font-size: 1.2rem;
   font-weight: lighter;
   text-transform: none;
   grid-area: 2/1/3/2;
   align-self: flex-end;
 }
-.productosCatalogo__ul .productosCatalogo__ulLi .product .productEditorial {
+.productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .product .productEditorial {
   grid-area: 3/1/4/2;
   align-self: flex-start;
 }
-.productosCatalogo__ul .productosCatalogo__ulLi .product .productDescription {
+.productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .product .productDescription {
   grid-area: 4/1/5/2;
   padding: 5px 0;
 }
-.productosCatalogo__ul .productosCatalogo__ulLi .product .productPrice {
+.productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .product .productPrice {
   grid-area: 5/1/6/2;
   align-self: center;
   justify-self: flex-start;
@@ -166,7 +183,7 @@ a:hover {
   font-weight: bold;
   text-transform: uppercase;
 }
-.productosCatalogo__ul .productosCatalogo__ulLi .product .productButton {
+.productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .product .productButton {
   grid-area: 6/1/7/2;
   width: 200px;
   height: 50px;
@@ -181,62 +198,74 @@ a:hover {
   text-transform: none;
 }
 
-.selectedProducts {
+.selectedProducts-container {
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-flow: auto;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+}
+.selectedProducts-container .selectedProducts {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   width: 80%;
   min-height: 600px;
-  z-index: 2;
   position: fixed;
-  top: 10%;
-  right: 10%;
+  left: 10%;
   color: #1a1a1a;
   background: #73937ef3;
   list-style: none;
-  display: none;
 }
-.selectedProducts .selectedProductsArrow {
+.selectedProducts-container .selectedProducts .selectedProductsArrow {
   width: 50px;
+  margin-bottom: 20px;
 }
-.selectedProducts .selectedProductsCart {
+.selectedProducts-container .selectedProducts .selectedProductsCart {
   width: 100px;
 }
-.selectedProducts .selectedProductsTitle {
+.selectedProducts-container .selectedProducts .selectedProductsTitle {
   margin: 30px 0 50px 0;
   font-size: 2.7rem;
   font-weight: bold;
   text-transform: none;
 }
-.selectedProducts .selectedProductsLi {
+.selectedProducts-container .selectedProducts .selectedProductsLi {
   width: 80%;
   display: flex;
   flex-flow: row;
   justify-content: flex-start;
   align-items: center;
 }
-.selectedProducts .selectedProductsLi .selectedProductsLi__img {
+.selectedProducts-container .selectedProducts .selectedProductsLi .selectedProductsLi__img {
   max-width: 170px;
 }
-.selectedProducts .selectedProductsLi .selectedProduct {
+.selectedProducts-container .selectedProducts .selectedProductsLi .selectedProduct {
   width: 70%;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: flex-end;
 }
-.selectedProducts .selectedProductsLi .selectedProduct .selectedProductTitle {
+.selectedProducts-container .selectedProducts .selectedProductsLi .selectedProduct .selectedProductTitle {
   font-size: 2rem;
   font-weight: bold;
   text-transform: none;
 }
-.selectedProducts .selectedProductsLi .selectedProduct .selectedProductInfo {
+.selectedProducts-container .selectedProducts .selectedProductsLi .selectedProduct .selectedProductInfo {
   font-size: 1.2rem;
   font-weight: normal;
   text-transform: none;
 }
-.selectedProducts .selectedProductsLi .selectedProduct .selectedProductPrice {
+.selectedProducts-container .selectedProducts .selectedProductsLi .selectedProduct .selectedProductPrice {
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: none;
