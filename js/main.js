@@ -4,16 +4,6 @@ productData.push(productDataConstructor("21 lecciones para el siglo 21", "2000",
 // ------------------------------------
 
 
-
-
-
-
-// Defino las instancias de los objetos manualmente porque no pude plantear una funcion que les asigne un nombre acorde a la cantidad de productos instanciados en base al JSON "productData.js".
-let productAAA000 = new Product(productData[0]);
-let productAAA001 = new Product(productData[1]);
-let productAAA002 = new Product(productData[2]);
-
-// Los almaceno en un array para despues poder buscarlos y utilizar sus metodos
 let arrayProductsObject = [];
 
 // Instancio automaticamente los productos del array ('productData.js') como objetos ('Product.js')
@@ -23,11 +13,12 @@ productData.forEach(product => {
   arrayProductsObject.push('product' + instanceId)
 })
 
-// // Prueba de las instancias de productos
-// productAAA000.getProductStock()
-// productAAA000.changeStock(+15)
-// productAAA000.getProductStock()
+console.log(arrayProductsObject)
 
+// Prueba de las instancias de productos
+productAAA000.getProductStock()
+productAAA000.changeStock(+15)
+productAAA000.getProductStock()
 
 
 
@@ -41,7 +32,9 @@ productData.forEach(product => {
 
 
 // CONSTRUCCION DE PRODUCTOS HTML
-let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
+let contenedorCatalogo = $('.productosCatalogo__ul');
+
+// document.querySelector
  
 productData.forEach(function (product) {
   if (product.isActive) {
