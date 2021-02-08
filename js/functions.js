@@ -43,27 +43,34 @@ function productBuilder(product) {
 
 
 
-//  --------------------------------------
 
 // Asigna el producto al 'Cart.js' buscandolo por su 'id', presente en la llamada del boton
 function selectItem (event) {
-  let productId = event.target.dataset.id;
-  let selectedProduct = arrayProductsObject.find(
-    arrayProductsObjectItem => arrayProductsObjectItem.productId == productId
-  )
-
-  // carrito.addNewProduct(selectedProduct, amount)
-  carrito.addNewProduct(selectedProduct, 1)
+  let selectedProduct = window['product' + event.target.dataset.id]
+  carrito.addNewProduct(selectedProduct)
+  // selectedProductBuilder(selectedProduct)
 }
-
 // FIN ------------------------------------
 
-// CONTAR CANTIDAD DE CLICKS EN PRODUCTOS ------------------------------------
 
-function selectItemQuantity() {
-  amount += 1;
+
+
+
+
+// FUNCION - selectedProductBuilder
+function selectedProductBuilder(product) {
+  return `
+  <li class="selectedProductsLi">
+    <img src="${product.img}" alt="" class="selectedProductsLi__img">
+    <div class="selectedProduct">
+      <h3 class="selectedProductTitle">${product.title}</h3>
+      <h4 class="selectedProductInfo">${product.author} - ${product.editorial}</h4>
+      <h4 class="selectedProductPrice">$${product.price}</h4>
+    </div>
+    <div class="selectedProductInfo">
+      <img src="img/delete.png" alt="Eliminar producto" class="selectedProductDelete" data="${product.id}">
+    </div>
+  </li>
+  `;
 }
-
-// FIN --------------------------------------
-
-
+//  --------------------------------------
