@@ -48,6 +48,7 @@ function productBuilder(product) {
 function selectItem (event) {
   let selectedProduct = window['product' + event.target.dataset.id]
   carrito.addNewProduct(selectedProduct)
+  carrito.getCart()
   // selectedProductBuilder(selectedProduct)
 }
 // FIN ------------------------------------
@@ -74,3 +75,8 @@ function selectedProductBuilder(product) {
   `;
 }
 //  --------------------------------------
+
+
+
+
+

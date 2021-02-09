@@ -1,9 +1,7 @@
 // Variables
-let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
-let cartCounter = document.querySelector('.cartCounter');
+let cartCounter = document.querySelectorAll('.cartCounter');
 let carrito = new Cart(); // instancio el carrito
-let productButton = document.querySelectorAll('.productButton'); // clases de los botones
-let contenedorSelectedProducts = $('.selectedProducts'); // contenedor de los productos seleccionados
+// let productButton = document.querySelectorAll('.productButton'); // clases de los botones
 // -------------------------------------------
 
 // AGREGO PRODUCTOS
@@ -21,7 +19,8 @@ productData.push(productDataConstructor(
 
 // CONSTRUCCION DE PRODUCTOS HTML 
 productData.forEach(function (product) {
-  if (product.isActive) {
+  if (product.isActive && document.querySelector('.productosCatalogo__ul') !== null) {
+    let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
     contenedorCatalogo.innerHTML += productBuilder(product);
   }
 })
@@ -30,7 +29,7 @@ productData.forEach(function (product) {
 
 
 // CORROBORO CANTIDAD DE PRODUCTOS EN EL CARRITO
-if (!cartCounter.textContent) {
+if (cartCounter.textContent = undefined) {
   cartCounter.style.display = 'none';
 }
 // -------------------------------------------
@@ -49,11 +48,6 @@ productData.forEach(product => {
   let instanceId = product.id;
   window['product' + instanceId] = new Product(product);
 })
-
-
-
-// carrito.getCart()
-// carrito.addNewProduct(productAAA000)
 
 
 
@@ -77,6 +71,7 @@ function cartOpens() {
 
 // SINCRONIZACION DEL BOTON -------------------------------------------
 // Recorro la variable 'productButton' y le asigno a cada boton un 'EventListener'
+let productButton = document.querySelectorAll('.productButton');
 productButton.forEach( (button) => {
   button.onclick = (event) => {
     selectItem(event);
@@ -86,9 +81,12 @@ productButton.forEach( (button) => {
 
 
 
-carrito.selection.forEach(product => {
-  contenedorSelectedProducts.innerHTML += selectedProductBuilder(product);
-})
+
+
+// carrito.selection.forEach(product => {
+//   let contenedorSelectedProducts = $('.selectedProducts');
+//   contenedorSelectedProducts.innerHTML += selectedProductBuilder(product);
+// })
 
 
 
