@@ -207,33 +207,43 @@ a:hover {
 
 .selectedProducts-container {
   display: none;
-  flex-flow: nowrap;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-height: 600px;
+  background: #73937ef3;
+  padding: 40px 0;
+}
+.selectedProducts-container .selectedProductsCart {
+  width: 100px;
+}
+.selectedProducts-container .selectedProductsTitle {
+  margin: 20px 0 10px 0;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: none;
+  display: inline-block;
+}
+.selectedProducts-container .selectedProductsTotalPrice {
+  margin-bottom: 50px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: none;
+  display: inline-block;
 }
 .selectedProducts-container .selectedProducts {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  min-height: 600px;
   width: 100%;
   color: #1a1a1a;
-  background: #73937ef3;
   list-style: none;
-}
-.selectedProducts-container .selectedProducts .selectedProductsCart {
-  width: 100px;
-}
-.selectedProducts-container .selectedProducts .selectedProductsTitle {
-  margin: 30px 0 50px 0;
-  font-size: 2.2rem;
-  font-weight: bold;
-  text-transform: none;
 }
 .selectedProducts-container .selectedProducts .selectedProductsLi {
   width: 70%;
+  margin: 15px 0;
   display: flex;
   flex-flow: row;
   justify-content: flex-start;

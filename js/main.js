@@ -57,7 +57,7 @@ $('.cartOpener').on('click', cartOpens);
 function cartOpens() {
   if (!open) {
     $('.productosCatalogo').css('display', 'none');
-    $('.selectedProducts-container').css('display', 'block');
+    $('.selectedProducts-container').css('display', 'flex');
     open = true;
   } else {
     $('.productosCatalogo').css('display', 'flex');
@@ -72,7 +72,7 @@ function cartOpens() {
 // SINCRONIZACION DEL BOTON -------------------------------------------
 // Recorro la variable 'productButton' y le asigno a cada boton un 'EventListener'
 let productButton = document.querySelectorAll('.productButton');
-productButton.forEach( (button) => {
+productButton.forEach( button => {
   button.onclick = (event) => {
     selectItem(event);
   }
@@ -81,20 +81,14 @@ productButton.forEach( (button) => {
 
 
 
-
-
-// carrito.selection.forEach(product => {
-//   let contenedorSelectedProducts = $('.selectedProducts');
-//   contenedorSelectedProducts.innerHTML += selectedProductBuilder(product);
-// })
-
-
-
 // // ELIMINAR DEL CARRITO
-// document.querySelector('.selectedProductDelete').onclick = (event) => {
-//   console.log($('event.target').parent())
-//   // deleteProduct(event)
-// }
+// let selectedProductDelete = document.querySelectorAll('.selectedProductDelete')
+
+// selectedProductDelete.forEach( product => {
+//   product.onclick = (event) => {
+//     deleteProduct(event)
+//   }}
+// )
 // // -------------------------------------------
 
 

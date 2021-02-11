@@ -48,8 +48,16 @@ function productBuilder(product) {
 function selectItem (event) {
   let selectedProduct = window['product' + event.target.dataset.id]
   carrito.addNewProduct(selectedProduct)
-  carrito.getCart()
-  // selectedProductBuilder(selectedProduct)
+}
+// FIN ------------------------------------
+
+
+
+
+
+// Asigna el producto al 'Cart.js' buscandolo por su 'id', presente en la llamada del boton
+function deleteProduct (event) {
+  console.log(event.target.dataset.id)
 }
 // FIN ------------------------------------
 
@@ -69,14 +77,9 @@ function selectedProductBuilder(product) {
       <h4 class="selectedProductPrice">$${product.price}</h4>
     </div>
     <div class="selectedProductInfo">
-      <img src="img/delete.png" alt="Eliminar producto" class="selectedProductDelete" data="${product.id}">
+      <img src="img/delete.png" alt="Eliminar producto" class="selectedProductDelete" data-id="${product.id}">
     </div>
   </li>
   `;
 }
 //  --------------------------------------
-
-
-
-
-
