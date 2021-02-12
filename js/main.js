@@ -1,7 +1,46 @@
 // Variables
 let cartCounter = document.querySelectorAll('.cartCounter');
 let carrito = new Cart(); // instancio el carrito
+let xhr;
+// PARA COMPROBAR SI EXISTE EL OBJETO - no existe en internet Explorer
+if (window.XMLHttpRequest) {
+  xhr = new XMLHttpRequest();
+} else {
+  xhr = new ActiveXObject('Microsoft.XMLHTTP')
+}
 // -------------------------------------------
+
+// // PETICION CON XMLHTTPREQUEST
+// // escucho el estado
+// xhr.addEventListener('readystatechange', () => {
+//   // estado de carga 4 y status 200 (sin errores)
+//   if (xhr.readyState == 4 && xhr.status == 200) {
+//     // parseo el contenido
+//     console.log(JSON.parse(xhr.response))
+//   }
+// })
+// // llamo al servidor
+// xhr.open('GET', 'json/productDataAPI.txt')
+// // xhr.send()
+// -------------------------------------------
+
+// PETICION CON FETCH (get)
+let peticion = fetch('json/productDataAPI.txt')
+peticion 
+  .then(response => response.json())
+  .then(response => console.log(response))
+// -------------------------------------------
+
+// // PETICION CON FETCH (post)
+// let postPetition = fetch('json/productDataAPI.txt', {
+//   method: 'POST',
+//   body: ,
+//   headers: {'Content-type': 'application/json'}
+// })
+// postPetition 
+//   .then(response => response.json())
+//   .then(response => console.log(response))
+// // -------------------------------------------
 
 // AGREGO PRODUCTOS
 productData.push(productDataConstructor(
