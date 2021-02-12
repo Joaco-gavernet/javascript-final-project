@@ -1,7 +1,6 @@
 // Variables
 let cartCounter = document.querySelectorAll('.cartCounter');
 let carrito = new Cart(); // instancio el carrito
-// let productButton = document.querySelectorAll('.productButton'); // clases de los botones
 // -------------------------------------------
 
 // AGREGO PRODUCTOS
@@ -38,7 +37,7 @@ if (cartCounter.textContent = undefined) {
 
 
 // DomContentLoad
-$(function() {
+$(document).ready(function() {
 console.log( "The DOM is now loaded and can be manipulated." );
 
 
@@ -52,21 +51,20 @@ productData.forEach(product => {
 
 
 // APERTURA DEL CARRITO
-var open = false;
+var cartOpen = false;
 $('.cartOpener').on('click', cartOpens);
 function cartOpens() {
-  if (!open) {
+  if (!cartOpen) {
     $('.productosCatalogo').css('display', 'none');
     $('.selectedProducts-container').css('display', 'flex');
-    open = true;
+    cartOpen = true;
   } else {
     $('.productosCatalogo').css('display', 'flex');
     $('.selectedProducts-container').css('display', 'none');
-    open = false;
+    cartOpen = false;
   }
 }
 // -------------------------------------------
-
 
 
 // SINCRONIZACION DEL BOTON -------------------------------------------
@@ -78,19 +76,6 @@ productButton.forEach( button => {
   }
 })
 // -------------------------------------------
-
-
-
-// // ELIMINAR DEL CARRITO
-// let selectedProductDelete = document.querySelectorAll('.selectedProductDelete')
-
-// selectedProductDelete.forEach( product => {
-//   product.onclick = (event) => {
-//     deleteProduct(event)
-//   }}
-// )
-// // -------------------------------------------
-
 
 
 

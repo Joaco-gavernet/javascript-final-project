@@ -57,7 +57,13 @@ function selectItem (event) {
 
 // Asigna el producto al 'Cart.js' buscandolo por su 'id', presente en la llamada del boton
 function deleteProduct (event) {
-  console.log(event.target.dataset.id)
+  let id = event.target.dataset.id
+  let indexId = carrito.selection.findIndex( productId => productId == id )
+  carrito.selection.splice(indexId,1)
+  let productPrice = window['product' + id].price;
+  carrito.total -= productPrice;
+  carrito.getTotal()
+  carrito.refresh()
 }
 // FIN ------------------------------------
 
@@ -82,4 +88,4 @@ function selectedProductBuilder(product) {
   </li>
   `;
 }
-//  --------------------------------------
+// --------------------------------------
