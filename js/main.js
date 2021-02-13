@@ -1,68 +1,29 @@
 // Variables
 let cartCounter = document.querySelectorAll('.cartCounter');
 let carrito = new Cart(); // instancio el carrito
-let xhr;
-// PARA COMPROBAR SI EXISTE EL OBJETO - no existe en internet Explorer
-if (window.XMLHttpRequest) {
-  xhr = new XMLHttpRequest();
-} else {
-  xhr = new ActiveXObject('Microsoft.XMLHTTP')
-}
-// -------------------------------------------
-
-// // PETICION CON XMLHTTPREQUEST
-// // escucho el estado
-// xhr.addEventListener('readystatechange', () => {
-//   // estado de carga 4 y status 200 (sin errores)
-//   if (xhr.readyState == 4 && xhr.status == 200) {
-//     // parseo el contenido
-//     console.log(JSON.parse(xhr.response))
-//   }
-// })
-// // llamo al servidor
-// xhr.open('GET', 'json/productDataAPI.txt')
-// // xhr.send()
-// -------------------------------------------
-
-// PETICION CON FETCH (get)
-let peticion = fetch('json/productDataAPI.txt')
-peticion 
-  .then(response => response.json())
-  .then(response => console.log(response))
-// -------------------------------------------
-
-// // PETICION CON FETCH (post)
-// let postPetition = fetch('json/productDataAPI.txt', {
-//   method: 'POST',
-//   body: ,
-//   headers: {'Content-type': 'application/json'}
-// })
-// postPetition 
-//   .then(response => response.json())
-//   .then(response => console.log(response))
-// // -------------------------------------------
+// -------------------------------------
 
 // AGREGO PRODUCTOS
-productData.push(productDataConstructor(
-  "21 lecciones para el siglo 21", 
-  "2000", 
-  "Yuval Noah Harari", 
-  "Planeta", 
-  "Aca iria una descripcion del libro", 
-  "img/21-lecciones-siglo-21.png", 
-  "AAA004", 
-  "5", 
-  "true"))
-// ------------------------------------
+// productData.push(productDataConstructor(
+//   "21 lecciones para el siglo 21", 
+//   "2000", 
+//   "Yuval Noah Harari", 
+//   "Planeta", 
+//   "Aca iria una descripcion del libro", 
+//   "img/21-lecciones-siglo-21.png", 
+//   "AAA004", 
+//   "5", 
+//   "true"))
+// // ------------------------------------
 
-// CONSTRUCCION DE PRODUCTOS HTML 
-productData.forEach(function (product) {
-  if (product.isActive && document.querySelector('.productosCatalogo__ul') !== null) {
-    let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
-    contenedorCatalogo.innerHTML += productBuilder(product);
-  }
-})
-// -------------------------------------------
+// // CONSTRUCCION DE PRODUCTOS HTML 
+// productData.forEach(function (product) {
+//   if (product.isActive && document.querySelector('.productosCatalogo__ul') !== null) {
+//     let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
+//     contenedorCatalogo.innerHTML += productBuilder(product);
+//   }
+// })
+// // -------------------------------------------
 
 
 
@@ -82,10 +43,10 @@ console.log( "The DOM is now loaded and can be manipulated." );
 
 
 // Instancio automaticamente los productos del array ('productData.js') como objetos ('Product.js')
-productData.forEach(product => {
-  let instanceId = product.id;
-  window['product' + instanceId] = new Product(product);
-})
+// productData.forEach(product => {
+//   let instanceId = product.id;
+//   window['product' + instanceId] = new Product(product);
+// })
 
 
 
