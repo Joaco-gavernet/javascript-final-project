@@ -8,6 +8,7 @@
     "img": "img/principito.png",
     "id": "AAA000",
     "stock": "10",
+    "tags": ["libro", "marcos", "marea", "el principito"],
     "isActive": "true"
   },
   {
@@ -19,6 +20,7 @@
     "img": "img/las-malas.png",
     "id": "AAA001",
     "stock": "10",
+    "tags": ["libro", "silvia", "planeta", "las malas"],
     "isActive": "true"
   },
   {
@@ -30,6 +32,7 @@
     "img": "img/padre-rico-padre-pobre.png",
     "id": "AAA002",
     "stock": "12",
+    "tags": ["libro", "roberto", "aguilar", "padre rico, padre pobre"],
     "isActive": "true"
   }
 ]

@@ -42,37 +42,41 @@ if (window.XMLHttpRequest) {
 // // -------------------------------------------
 
 // PETICION CON AJAX
-$.ajax({
-  type: 'GET',
-  url: 'json/productDataAPI.txt',
-  success: function(resp) {
-    let request = JSON.parse(resp)
-    console.log(request)
+// $.ajax({
+//   type: 'GET',
+//   url: 'json/productDataAPI.txt',
+//   success: function(resp) {
+//     let request = JSON.parse(resp)
+//     console.log(request)
 
-    request.forEach(product => {
-      let instanceId = product.id;
-      window['product' + instanceId] = new Product(product);
-    })
+//     // request.forEach( element => {console.log(element.tags)})
 
-    request.forEach(function (product) {
-      if (product.isActive && document.querySelector('.productosCatalogo__ul') !== null) {
-        let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
-        contenedorCatalogo.innerHTML += productBuilder(product);
-      }
-    })
+//     request.forEach(product => {
+//       let instanceId = product.id;
+//       window['product' + instanceId] = new Product(product);
+//     })
 
-    let productButton = document.querySelectorAll('.productButton');
-    productButton.forEach( button => {
-      button.onclick = (event) => {
-        selectItem(event);
-      }
-    })
-  },
-  error: function() {
-    console.log('Error - Archivo no encontrado')
-  }
-});
-// ----------------------------------------------
+//     console.log(productAAA000)
+
+//     // request.forEach(function (product) {
+//     //   if (product.isActive && document.querySelector('.productosCatalogo__ul') !== null) {
+//     //     let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
+//     //     contenedorCatalogo.innerHTML += productBuilder(product);
+//     //   }
+//     // })
+
+//     // let productButton = document.querySelectorAll('.productButton');
+//     // productButton.forEach( button => {
+//     //   button.onclick = (event) => {
+//     //     selectItem(event);
+//     //   }
+//     // })
+//   },
+//   error: function() {
+//     console.log('Error - Archivo no encontrado')
+//   }
+// });
+// // ----------------------------------------------
 
 // // POST CON AJAX
 // $.ajax({

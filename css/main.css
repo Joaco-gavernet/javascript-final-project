@@ -140,6 +140,33 @@ a:hover {
   justify-content: center;
   align-items: center;
 }
+.productosCatalogo .fieldset {
+  width: 80%;
+  max-width: 600px;
+  margin-top: 50px;
+  padding: 20px 10px;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+.productosCatalogo .fieldset .searchBar {
+  padding: 5px 10px;
+  width: 80%;
+  border-radius: 5px;
+  border-bottom: 3px solid rgba(75, 75, 75, 0.856);
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: none;
+}
+.productosCatalogo .fieldset .searchButton {
+  padding: 5px 8px;
+  margin-left: 10px;
+  border-radius: 40%;
+  color: #1a1a1a;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 .productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi {
   display: flex;
   flex-flow: nowrap;

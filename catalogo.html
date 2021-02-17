@@ -14,7 +14,7 @@
     crossorigin="anonymous">
   </script>
   <!-- Links a los "json" -->
-  <script defer src="json/productData.js"></script>
+  <script src="js/requestProductDataAPI.js"></script>
   <!-- Links a los archivos de JS -->
   <script defer src="js/Cart.js"></script>
   <script defer src="js/functions.js"></script>
@@ -49,6 +49,12 @@
   </main>
   
   <div class="productosCatalogo">
+      <fieldset class="fieldset">
+        <input type="text" placeholder="Buscar" class="searchBar">
+        <button class="searchButton">
+          Ok
+        </button>
+      </fieldset>
     <ul class="productosCatalogo__ul">
     </ul>
   </div>

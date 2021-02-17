@@ -23,7 +23,7 @@ function productDataConstructor (titleInput, priceInput, authorInput, editorialI
 
 function productBuilder(product) {
   return `
-  <li class="productosCatalogo__ulLi">
+  <li class="productosCatalogo__ulLi"  data-id="${product.id}">
       <img src="${product.img}" alt="Portada de libro" class="productImage">
       <div class="product">
         <h2 class="productTitle">${product.title}</h2>
@@ -89,3 +89,25 @@ function selectedProductBuilder(product) {
   `;
 }
 // --------------------------------------
+
+
+
+// FUNCION - para la barra de busquedas
+function searchFor (json) {
+  let barValue = document.querySelector('.searchBar').value.toLowerCase() // tomo el valor ingresado y lo paso a minuscula para compararlo con los tags
+  if (barValue) { // si existe un valor en barValue
+    json.forEach((product) => { // recorro el json que devuelve la request de Ajax
+      for (let i in product.tags) { // itero entre los tags de cada elemento de los productos
+        if (!product.tags[i].includes(barValue)) { // corroboro sino incluye el valor ingresado
+          $(`.productosCatalogo__ulLi[data-id="${product.id}"]`).hide(); // oculto el elemento
+        } else {
+          $(`.productosCatalogo__ulLi[data-id="${product.id}"]`).show(); // si lo incluye, lo muestro
+        }
+      }
+    })
+  } else if (!barValue) {
+    $(`.productosCatalogo__ulLi`).show(); // si no hay barValue ingresado, muestro todos 
+  }
+}
+// --------------------------------------
+

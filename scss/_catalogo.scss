@@ -18,6 +18,32 @@
   background: #f0eae0cb;
   @include flex(flex, wrap, center, center);
 
+  .fieldset{
+    width: 80%;
+    max-width: 600px;
+    margin-top: 50px;
+    padding: 20px 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+
+    .searchBar {
+      padding: 5px 10px;
+      width: 80%;
+      border-radius: 5px;
+      border-bottom: 3px solid rgba(75, 75, 75, 0.856);
+      @include font(1rem, normal, none);
+    }
+
+    .searchButton {
+      padding: 5px 8px;
+      margin-left: 10px;
+      border-radius: 40%;
+      color: $color-oscuro;
+      @include font(0.8rem, bold, uppercase);
+    }
+  }
+
   .productosCatalogo__ul {
 
     .productosCatalogo__ulLi {
