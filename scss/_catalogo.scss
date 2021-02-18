@@ -6,6 +6,14 @@
   .portada__nav {
     .nav__ul {
       color: $color-oscuro;
+
+      .nav__ulLi a:hover {
+        color: rgb(65, 65, 65);
+      }
+    }
+
+    .cartOpener {
+      cursor: pointer;
     }
   }
 
@@ -45,22 +53,22 @@
   }
 
   .productosCatalogo__ul {
-
+    padding: 40px 0;
     .productosCatalogo__ulLi {
       @include flex(flex, nowrap, center, center);
       width: 100%;
-      max-height: 400px;
+      // max-height: 400px;
+      padding: 20px;
 
       .productImage {
         max-width: 200px;
-        margin: 50px;
+        margin: 0 50px;
         border: 1px solid black;
       }
 
       .product {
         width: 50%;
         display: grid;
-        margin: 50px 0;
         grid-template-columns: 1fr;
         // grid-template-rows: 10vh 5vh 5vh 15vh 8vh 5vh;
         color: $color-oscuro;
@@ -106,6 +114,15 @@
           border: none;
           color: $color-oscuro;
           @include font(1rem, bold, none);
+          cursor: pointer;
+          transition: all, 1s;
+
+          &:hover {
+            background: #889c8fcd;
+            transform: scale(1.05);
+            // width: 220px;
+            // height: 70px;
+          }
         }
       }
     }
@@ -118,7 +135,7 @@
   width: 100%;
   min-height: 600px;
   background: #73937ef3;
-  padding: 40px 0;
+  padding: 20px 0;
 
   .selectedProductsCart {
     width: 100px;
@@ -146,13 +163,16 @@
     .selectedProductsLi {
       width: 70%;
       margin: 15px 0;
+      padding: 15px;
+      background: $color-ddl;
+      border-radius: 5px;
       @include flex(flex, row, flex-start, center);
       
       .selectedProductsLi__img {
-        min-width: 100px;
+        min-width: 80px;
         max-width: 10%;
         border: 1px solid black;
-        margin: 0 40px;
+        margin: 0 20px;
       }
       
       .selectedProduct {
@@ -160,22 +180,49 @@
         @include flex(flex, column, center, flex-start);
         
         .selectedProductTitle {
-          @include font(1.5rem, bold, none);
+          @include font(1.2rem, bold, none);
         }
         
         .selectedProductInfo {
-          @include font(1.2rem, normal, none);
+          @include font(1rem, normal, none);
         }
         
         .selectedProductPrice {
-          @include font(1.5rem, bold, none);
+          @include font(1.2rem, bold, none);
         }
       }
-    }
 
-    .selectedProductInfo {
-      .selectedProductDelete {
-        width: 45px;
+      .selectedProductInfo {
+        @include flex(flex, row, center, center);
+
+        .selectedProductCounter {
+          @include flex(flex, normal, center, center);
+  
+          .counterInput {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              @include font(1rem, bold, uppercase);
+              text-align: center;
+              color: $color-oscuro;
+              border: 0;
+              appearance: none;
+              outline: 0;
+          }
+
+          .counterSpan {
+              display: block;
+              font-size: 25px;
+              padding: 0 10px;
+              color: $color-oscuro;
+              cursor: pointer;
+              user-select: none;
+          }
+        }
+
+        .selectedProductDelete {
+          width: 45px;
+        }
       }
     }
   }

@@ -1,6 +1,8 @@
 // Variables
 let cartCounter = document.querySelectorAll('.cartCounter');
 let carrito = new Cart(); // instancio el carrito
+let ls = new LocalStorage(); // instancio el objeto para manipular el Local Storage
+localStorage.clear()
 // -------------------------------------
 
 // PETICION CON AJAX
@@ -9,7 +11,6 @@ $.ajax({
   url: 'json/productDataAPI.txt',
   success: function(resp) {
     let request = JSON.parse(resp)
-    // request.forEach(element => {console.log(element.tags)})
 
     request.forEach(product => {
       let instanceId = product.id;
@@ -32,7 +33,9 @@ $.ajax({
 
     // funcion de la barra de busqueda
     let searchBar = document.querySelector('.searchBar');
-    searchBar.addEventListener('keyup', () => {searchFor(request)});
+    if (searchBar) {
+      searchBar.addEventListener('keyup', () => {searchFor(request)});
+    }
 
   },
   error: function() {
@@ -109,6 +112,22 @@ productButton.forEach( button => {
 })
 // -------------------------------------------
 
+let selectedProductDelete = document.querySelectorAll('.selectedProductDelete');
+selectedProductDelete.forEach( button => {
+  button.onclick = (event) => {
+    carrito.deleteProduct(event);
+  }
+})
+
+// Sincronizacion de botones para administrar la cantidad de productos selccionados
+// let up = document.getElementsByClassName('up');
+let up = document.querySelector('.up');
+let down = document.querySelector('.down');
+if (up & down) {
+  up.addEventListener('click',  (event) => {increaseCount(event, up)})
+  down.addEventListener('click', (event) => {decreaseCount(event, down)})
+}
+// -------------------------------------------
 
 // FIN - DomContentLoad 
 });

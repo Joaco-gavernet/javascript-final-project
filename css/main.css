@@ -65,6 +65,7 @@ a:hover {
   width: 40px;
   padding: 5px;
   margin-left: 3vw;
+  cursor: pointer;
 }
 .portada .portada__heading, .portadaCatalogo .portada__heading {
   color: #fffdf8;
@@ -129,6 +130,12 @@ a:hover {
 .portadaCatalogo .portada__nav .nav__ul {
   color: #1a1a1a;
 }
+.portadaCatalogo .portada__nav .nav__ul .nav__ulLi a:hover {
+  color: #414141;
+}
+.portadaCatalogo .portada__nav .cartOpener {
+  cursor: pointer;
+}
 .portadaCatalogo::after {
   display: none;
 }
@@ -167,23 +174,25 @@ a:hover {
   font-weight: bold;
   text-transform: uppercase;
 }
+.productosCatalogo .productosCatalogo__ul {
+  padding: 40px 0;
+}
 .productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi {
   display: flex;
   flex-flow: nowrap;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-height: 400px;
+  padding: 20px;
 }
 .productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .productImage {
   max-width: 200px;
-  margin: 50px;
+  margin: 0 50px;
   border: 1px solid black;
 }
 .productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .product {
   width: 50%;
   display: grid;
-  margin: 50px 0;
   grid-template-columns: 1fr;
   color: #1a1a1a;
 }
@@ -230,6 +239,12 @@ a:hover {
   font-size: 1rem;
   font-weight: bold;
   text-transform: none;
+  cursor: pointer;
+  transition: all, 1s;
+}
+.productosCatalogo .productosCatalogo__ul .productosCatalogo__ulLi .product .productButton:hover {
+  background: #889c8fcd;
+  transform: scale(1.05);
 }
 
 .selectedProducts-container {
@@ -240,7 +255,7 @@ a:hover {
   width: 100%;
   min-height: 600px;
   background: #73937ef3;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 .selectedProducts-container .selectedProductsCart {
   width: 100px;
@@ -271,16 +286,19 @@ a:hover {
 .selectedProducts-container .selectedProducts .selectedProductsLi {
   width: 70%;
   margin: 15px 0;
+  padding: 15px;
+  background: #dfd3bcf1;
+  border-radius: 5px;
   display: flex;
   flex-flow: row;
   justify-content: flex-start;
   align-items: center;
 }
 .selectedProducts-container .selectedProducts .selectedProductsLi .selectedProductsLi__img {
-  min-width: 100px;
+  min-width: 80px;
   max-width: 10%;
   border: 1px solid black;
-  margin: 0 40px;
+  margin: 0 20px;
 }
 .selectedProducts-container .selectedProducts .selectedProductsLi .selectedProduct {
   width: 70%;
@@ -290,21 +308,56 @@ a:hover {
   align-items: flex-start;
 }
 .selectedProducts-container .selectedProducts .selectedProductsLi .selectedProduct .selectedProductTitle {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-transform: none;
 }
 .selectedProducts-container .selectedProducts .selectedProductsLi .selectedProduct .selectedProductInfo {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: normal;
   text-transform: none;
 }
 .selectedProducts-container .selectedProducts .selectedProductsLi .selectedProduct .selectedProductPrice {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-transform: none;
 }
-.selectedProducts-container .selectedProducts .selectedProductInfo .selectedProductDelete {
+.selectedProducts-container .selectedProducts .selectedProductsLi .selectedProductInfo {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+.selectedProducts-container .selectedProducts .selectedProductsLi .selectedProductInfo .selectedProductCounter {
+  display: flex;
+  flex-flow: normal;
+  justify-content: center;
+  align-items: center;
+}
+.selectedProducts-container .selectedProducts .selectedProductsLi .selectedProductInfo .selectedProductCounter .counterInput {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1a1a1a;
+  border: 0;
+  -webkit-appearance: none;
+          appearance: none;
+  outline: 0;
+}
+.selectedProducts-container .selectedProducts .selectedProductsLi .selectedProductInfo .selectedProductCounter .counterSpan {
+  display: block;
+  font-size: 25px;
+  padding: 0 10px;
+  color: #1a1a1a;
+  cursor: pointer;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.selectedProducts-container .selectedProducts .selectedProductsLi .selectedProductInfo .selectedProductDelete {
   width: 45px;
 }
 

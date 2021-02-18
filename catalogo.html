@@ -16,9 +16,9 @@
   <!-- Links a los "json" -->
   <script src="js/requestProductDataAPI.js"></script>
   <!-- Links a los archivos de JS -->
+  <script defer src="js/LocalStorage.js"></script>
   <script defer src="js/Cart.js"></script>
   <script defer src="js/functions.js"></script>
-  <script defer src="js/LocalStorage.js"></script>
   <script defer src="js/Product.js"></script>
   <script defer src="js/Client.js"></script>
   <script defer src="js/main.js"></script>
@@ -51,9 +51,6 @@
   <div class="productosCatalogo">
       <fieldset class="fieldset">
         <input type="text" placeholder="Buscar" class="searchBar">
-        <button class="searchButton">
-          Ok
-        </button>
       </fieldset>
     <ul class="productosCatalogo__ul">
     </ul>
@@ -74,6 +71,11 @@
           <h4 class="selectedProductPrice">$1500</h4>
         </div>
         <div class="selectedProductInfo">
+          <div class="selectedProductCounter">
+            <span class="counterSpan down">-</span>
+            <input type="text" value="1" class="counterInput">
+            <span class="counterSpan up" >+</span>
+          </div>
           <img src="img/delete.png" alt="Eliminar producto" class="selectedProductDelete">
         </div>
       </li>
