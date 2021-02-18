@@ -34,5 +34,16 @@
     "stock": "12",
     "tags": ["libro", "roberto", "aguilar", "padre rico, padre pobre"],
     "isActive": "true"
+  },{
+    "title": "21 lecciones para el siglo 21",
+    "price": "2000",
+    "author": "Yuval Noah Harari",
+    "editorial": "Planeta",
+    "description": "Aca iria una descripcion del libro",
+    "img": "img/21-lecciones-siglo-21.png",
+    "id": "AAA003",
+    "stock": "5",
+    "tags": ["libro", "yuval", "planeta", "21 lecciones para el siglo 21"],
+    "isActive": "true"
   }
 ]

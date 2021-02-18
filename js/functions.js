@@ -1,21 +1,3 @@
-// FUNCION PARA DEFINIR PRODUCTOS ------------------------------------
-function productDataConstructor (titleInput, priceInput, authorInput, editorialInput, descriptionInput, imgInput, idInput, stockInput, activityInput) {
-  let item = {
-    title: titleInput,
-    price: priceInput,
-    author: authorInput,
-    editorial: editorialInput,
-    description: descriptionInput,
-    img: imgInput,
-    id: idInput,
-    stock: stockInput,
-    isActive: activityInput
-  };
-  return (item);
-}
-// ------------------------------------
-
-
 // FUNCION - DOM BUILDER DE LOS PRODUCTOS EN PRODUCTDATA.JS ------------------------------------
 function productBuilder(product) {
   return `
@@ -27,33 +9,12 @@ function productBuilder(product) {
         <h4 class="productEditorial">Editorial: ${product.editorial}</h4>
         <p class="productDescription">${product.description}</p>
         <h3 class="productPrice">$${product.price}</h3>
-        <input type="button" value="Agregar" class="productButton" data-id="${product.id}">
+        <input type="button" value="Agregar" class="productButton" onclick="selectItem(event)" data-id="${product.id}">
       </div>
   </li>
   `;
 }
 // ------------------------------------
-
-
-// Asigna el producto al 'Cart.js' buscandolo por su 'id', presente en la llamada del boton
-function selectItem (event) {
-  let selectedProduct = window['product' + event.target.dataset.id]
-  carrito.addNewProduct(selectedProduct)
-}
-// ------------------------------------
-
-
-// // Asigna el producto al 'Cart.js' buscandolo por su 'id', presente en la llamada del boton
-// function deleteProduct (event) {
-//   let id = event.target.dataset.id
-//   let indexId = carrito.selection.findIndex( productId => productId == id )
-//   carrito.selection.splice(indexId,1)
-//   let productPrice = window['product' + id].price;
-//   carrito.total -= productPrice;
-//   carrito.getTotal()
-//   carrito.refresh()
-// }
-// // ------------------------------------
 
 
 // FUNCION - selectedProductBuilder
