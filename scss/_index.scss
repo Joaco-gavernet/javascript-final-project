@@ -103,9 +103,7 @@
 
 
 .conocenos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(flex, normal, center, center);
   height: 80vh;
   background: $color-verde;
 
@@ -127,3 +125,51 @@
 .videoConocenos {
   height: auto;
 }
+
+.contactanos {
+  width: 100%;
+  height: 80vh;
+  background: $color-claro;
+  padding: 50px 40px;
+  @include flex(flex, column, center, center);
+
+  .contactanosH3 {
+    @include font(3rem, bold, uppercase);
+    margin: 1.5rem;
+  }
+
+  .form {
+    @include flex(flex, column, space-around, center);
+
+    .name, 
+    .instagram,
+    .email,
+    .description {
+      min-width: 500px;
+      margin: 10px 0;
+      padding: 10px 20px;
+      @include font(1.2rem, normal, none);
+    }
+
+    .button {
+      width: 200px;
+      height: 50px;
+      align-self: center;
+      justify-self: flex-end;
+      background: $color-ddl;
+      border-radius: 5%;
+      border: none;
+      color: $color-oscuro;
+      outline: none;
+      @include font(1rem, bold, none);
+      cursor: pointer;
+      margin: 20px 0;
+      transition: all, 1s;
+
+      &:hover {
+        background: #438A2E;
+        transform: scale(1.08);
+      }
+    }
+  }
+} 
