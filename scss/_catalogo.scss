@@ -27,7 +27,7 @@
   @include flex(flex, wrap, center, center);
 
   .fieldset{
-    width: 80%;
+    width: 90%;
     max-width: 600px;
     margin-top: 50px;
     padding: 20px 10px;
@@ -36,19 +36,16 @@
     justify-content: center;
 
     .searchBar {
-      padding: 5px 10px;
-      width: 80%;
+      padding: 10px 20px;
+      width: 90%;
       border-radius: 5px;
       border-bottom: 3px solid rgba(75, 75, 75, 0.856);
-      @include font(1rem, normal, none);
-    }
+      @include font(1.2rem, normal, none);
+      transition: all 1s ease-in;
 
-    .searchButton {
-      padding: 5px 8px;
-      margin-left: 10px;
-      border-radius: 40%;
-      color: $color-oscuro;
-      @include font(0.8rem, bold, uppercase);
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
 
@@ -113,15 +110,14 @@
           border-radius: 5%;
           border: none;
           color: $color-oscuro;
+          outline: none;
           @include font(1rem, bold, none);
           cursor: pointer;
           transition: all, 1s;
 
           &:hover {
             background: #889c8fcd;
-            transform: scale(1.05);
-            // width: 220px;
-            // height: 70px;
+            transform: scale(1.08);
           }
         }
       }
@@ -147,8 +143,28 @@
     display: inline-block;
   }
 
+  .selectedProducts__buyButton {
+    width: 200px;
+    height: 50px;
+    align-self: center;
+    justify-self: flex-end;
+    background: $color-ddl;
+    border-radius: 5%;
+    border: none;
+    color: $color-oscuro;
+    outline: none;
+    @include font(1rem, bold, none);
+    cursor: pointer;
+    margin: 20px 0;
+    transition: all, 1s;
+
+    &:hover {
+      background: #b4ab99f1;
+      transform: scale(1.08);
+    }
+  }
+
   .selectedProductsTotalPrice {
-    margin-bottom: 50px;
     @include font(1.8rem, bold, none);
     display: inline-block;
   }
@@ -163,7 +179,7 @@
     .selectedProductsLi {
       width: 70%;
       margin: 15px 0;
-      padding: 15px;
+      padding: 15px 5%;
       background: $color-ddl;
       border-radius: 5px;
       @include flex(flex, row, flex-start, center);
@@ -192,13 +208,16 @@
         }
       }
 
-      .selectedProductInfo {
+      .selectedProductModifier {
         @include flex(flex, row, center, center);
 
-        .selectedProductCounter {
-          @include flex(flex, normal, center, center);
-  
-          .counterInput {
+        .orderDiv {
+          @include flex(flex, wrap, center, center);
+
+          .selectedProductCounter {
+            @include flex(flex, normal, center, center);
+    
+            .counterInput {
               width: 40px;
               height: 40px;
               border-radius: 50%;
@@ -208,22 +227,88 @@
               border: 0;
               appearance: none;
               outline: 0;
-          }
-
-          .counterSpan {
+            }
+  
+            .counterSpan {
               display: block;
               font-size: 25px;
               padding: 0 10px;
               color: $color-oscuro;
               cursor: pointer;
               user-select: none;
+            }
+  
+          }
+
+          .subtotalPrice {
+            padding-top: 10px; 
+            text-align: center;
+            @include font(1rem, bold, none);
           }
         }
-
+        
         .selectedProductDelete {
           width: 45px;
+          cursor: pointer;
         }
       }
+    }
+  }
+
+  .selectedProducts__options {
+    width: 80%;
+    @include flex(flex, normal, space-evenly, center);
+
+    .selectedProducts__clearButton {
+      width: 200px;
+      height: 50px;
+      align-self: center;
+      justify-self: flex-end;
+      background: $color-ddl;
+      border-radius: 5%;
+      border: none;
+      color: $color-oscuro;
+      outline: none;
+      @include font(1rem, bold, none);
+      cursor: pointer;
+      margin: 20px 0;
+      transition: all, 1s;
+
+      &:hover {
+        background: #AE0F09;
+        transform: scale(1.08);
+      }
+    }
+
+    .selectedProducts__confirmButton {
+      width: 200px;
+      height: 50px;
+      align-self: center;
+      justify-self: flex-end;
+      background: $color-ddl;
+      border-radius: 5%;
+      border: none;
+      color: $color-oscuro;
+      outline: none;
+      @include font(1rem, bold, none);
+      cursor: pointer;
+      margin: 20px 0;
+      transition: all, 1s;
+
+      &:hover {
+        background: #438A2E;
+        transform: scale(1.08);
+      }
+    }
+  }
+}
+
+.swal-overlay--show-modal {
+  .swal-modal {
+    padding: 55px 0;
+    
+    .swal-icon--success {
+      margin: 5px auto;
     }
   }
 }

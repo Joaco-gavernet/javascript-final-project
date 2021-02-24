@@ -9,7 +9,7 @@ function productBuilder(product) {
         <h4 class="productEditorial">Editorial: ${product.editorial}</h4>
         <p class="productDescription">${product.description}</p>
         <h3 class="productPrice">$${product.price}</h3>
-        <input type="button" value="Agregar" class="productButton" onclick="selectItem(event)" data-id="${product.id}">
+        <input type="button" value="Agregar" class="productButton" data-id="${product.id}">
       </div>
   </li>
   `;
@@ -28,11 +28,14 @@ function selectedProductBuilder(product) {
       <h4 class="selectedProductPrice">$${product.price}</h4>
     </div>
 
-    <div class="selectedProductInfo">
-      <div class="selectedProductCounter">
-        <span class="counterSpan down">-</span>
-        <input type="text" value="1" class="counterInput">
-        <span class="counterSpan up" >+</span>
+    <div class="selectedProductModifier">
+      <div class="orderDiv" data-id="${product.id}">
+        <div class="selectedProductCounter">
+          <span class="counterSpan down" onClick="decreaseCount(event)">-</span>
+          <input type="text" value="1" class="counterInput">
+          <span class="counterSpan up" onClick="increaseCount(event)">+</span>
+        </div>
+        <h4 class="subtotalPrice">Subtotal: $<span class="subtotalPrice__value" data-id="${product.id}">3000</span></h4>
       </div>
       <img src="img/delete.png" alt="Eliminar producto" class="selectedProductDelete" data-id="${product.id}">
     </div>
@@ -62,16 +65,16 @@ function searchFor (json) {
 
 
 // FUNCION - administra cantidad de productos seleccionados
-function increaseCount(a, b) {
-  var input = b.previousElementSibling;
+function increaseCount(element) {
+  var input = element.target.previousElementSibling;
   var value = parseInt(input.value, 10); 
   value = isNaN(value)? 0 : value;
   value ++;
   input.value = value;
 }
 
-function decreaseCount(a, b) {
-  var input = b.nextElementSibling;
+function decreaseCount(element) {
+  var input = element.target.nextElementSibling;
   var value = parseInt(input.value, 10); 
   if (value > 1) {
     value = isNaN(value)? 0 : value;

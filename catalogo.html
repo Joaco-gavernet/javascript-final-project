@@ -7,6 +7,8 @@
   <meta name="keywords" content="Rellenar">
   <!-- Link a estilos -->
   <link rel="stylesheet" href="css/main.css">
+  <!-- Link a Sweet Alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- Link a JQuery -->
   <script 
     src="https://code.jquery.com/jquery-3.5.1.min.js" 
@@ -56,9 +58,12 @@
     <img src="img/shopping-cart.png" alt="" class="selectedProductsCart">
     <h2 class="selectedProductsTitle">Tu selección</h2>
     <h3 class="selectedProductsTotalPrice"></h3>
+    <a href="catalogo.html">
+      <input type="button" value="Seguir comprando" class="selectedProducts__buyButton">
+    </a>
 
     <ul class="selectedProducts">
-      <li class="selectedProductsLi">
+      <!-- <li class="selectedProductsLi">
         <img src="img/padre-rico-padre-pobre.png" alt="" class="selectedProductsLi__img">
         <div class="selectedProduct">
           <h3 class="selectedProductTitle">Padre rico, padre pobre</h3>
@@ -66,16 +71,29 @@
           <h4 class="selectedProductPrice">$1500</h4>
         </div>
         <div class="selectedProductInfo">
-          <div class="selectedProductCounter">
-            <span class="counterSpan down">-</span>
-            <input type="text" value="1" class="counterInput">
-            <span class="counterSpan up" >+</span>
+          <div class="orderDiv">
+            <div class="selectedProductCounter">
+              <span class="counterSpan down" onClick="decreaseCount(event)">-</span>
+              <input type="text" value="1" class="counterInput">
+              <span class="counterSpan up" onClick="increaseCount(event)">+</span>
+            </div>
+            <h4 class="subtotalPrice">$3000</h4>
           </div>
           <img src="img/delete.png" alt="Eliminar producto" class="selectedProductDelete">
         </div>
-      </li>
-  
+      </li> -->
     </ul>
+
+    <div class="selectedProducts__options">
+      <a href="catalogo.html">
+        <input type="button" value="Vaciar pedido" class="selectedProducts__clearButton">
+      </a>
+  
+      <a href="catalogo.html">
+        <input type="button" value="Confirmar pedido" class="selectedProducts__confirmButton">
+      </a>
+    </div>
+
   </div>
 
   <footer class="footerDesktop">
