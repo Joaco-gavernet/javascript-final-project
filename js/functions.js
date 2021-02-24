@@ -32,7 +32,7 @@ function selectedProductBuilder(product) {
       <div class="orderDiv" data-id="${product.id}">
         <div class="selectedProductCounter">
           <span class="counterSpan down" onClick="decreaseCount(event)">-</span>
-          <input type="text" value="1" class="counterInput">
+          <input type="text" value="1" class="counterInput" data-id="${product.id}">
           <span class="counterSpan up" onClick="increaseCount(event)">+</span>
         </div>
         <h4 class="subtotalPrice">Subtotal: $<span class="subtotalPrice__value" data-id="${product.id}">3000</span></h4>

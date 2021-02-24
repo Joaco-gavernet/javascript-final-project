@@ -53,19 +53,38 @@ class Cart {
     }
   }
 
-  refresh () {
+  buildItems () {
     let localSelection = this.getFromLocal('cartSelection');
-    
     let contenedorSelectedProducts = document.querySelector('.selectedProducts');
     contenedorSelectedProducts.innerHTML = "";
+  
     localSelection.forEach( searching => {
-      // let result = this.requestSearch(product.id) // intento de implementacion del metodo para buscar directamente el producto en la request
       this.request.forEach( product => {
         if (product.id == searching.id) {
           contenedorSelectedProducts.innerHTML += selectedProductBuilder(product);
         }
       })
     })
+  }
+
+  cleanLocal () { // metodo para limpiar los productos en el Local con menos de 1 unidad
+    let localSelection = this.getFromLocal('cartSelection');
+    localSelection.forEach( searching => {
+      if (searching.quantity < 1 || searching.quantity == 'null') {
+        let index = localSelection.indexOf(searching);
+        localSelection.splice(index, 1);
+        this.setToLocal('cartSelection', localSelection);
+        this.refresh()
+      }
+    })
+    debugger;
+    this.buildItems()
+  }
+
+  refresh () {
+    let localSelection = this.getFromLocal('cartSelection');
+    
+    this.cleanLocal();
 
     let selectedProductDelete = document.querySelectorAll('.selectedProductDelete');
     selectedProductDelete.forEach( button => {
@@ -77,23 +96,49 @@ class Cart {
     })
 
 
-    let selectedProducts = document.querySelectorAll('.selectedProductModifier');
+    let selectedProducts = document.querySelectorAll('.orderDiv'); 
     selectedProducts.forEach( product => {
       let counterInput = product.querySelector('.counterInput');
       counterInput.addEventListener('change', () => {
-        console.log('Changed input');
+        let item = localSelection.find( element => element.id == product.dataset.id);
+        item.quantity = parseInt(counterInput.value);
+        this.setToLocal('cartSelection', localSelection)
+        this.refresh();
       })
     })
 
-    // for (let b in selectedProducts) {
-    //   let counterInput = selectedProducts[b].querySelector('.counterInput');
-    //   console.log(counterInput);
-      
-    //   // for (let i = 0; i < selectedProducts.length; i++) {
-    //   //   console.log(selectedProducts[i]);
-    //   // }
-    //   // counterInput.addEventListener('change', () => { console.log('Hola que onda');})
+    // ///////////////////////////////////////////////////////////////////////////
+    // /////////////////////WORKING IN HERE///////////////////////////////////////
+    // ///////////////////////////////////////////////////////////////////////////
+
+    // let selectedProducts = document.querySelectorAll('.orderDiv');
+    // selectedProducts.forEach( product => {
+    //   let counterInput = product.querySelector('.counterInput');
+    //   counterInput.addEventListener('change', () => {
+    //     let item = localSelection.find( element => element.id == product.dataset.id);
+    //     item.quantity = parseInt(counterInput.value);
+    //     this.setToLocal('cartSelection', localSelection)
+    //     this.refresh();
+    //   })
+    // })
+
+    // function corroborateQuantity () {
+    //   let counterInputGroup = document.querySelectorAll('.counterInput');
+    //   let localSelection = this.getFromLocal('cartSelection');
+    //   let item = localSelection.find( element => element.id == product.dataset.id);
+    //   item.quantity = parseInt(counterInput.value);
+    //   this.setToLocal('cartSelection', localSelection)
+    //   this.refresh();
     // }
+
+    // let counterInputGroup = document.querySelectorAll('.counterInput')
+    // for (let i in counterInputGroup) {
+    //   counterInputGroup[i].addEventListener('change', corroborateQuantity);
+    // }
+
+    // ///////////////////////////////////////////////////////////////////////////
+    // /////////////////////UNTIL THIS PART///////////////////////////////////////
+    // ///////////////////////////////////////////////////////////////////////////
 
 
     if (!localSelection.length > 0) {
@@ -112,6 +157,7 @@ class Cart {
       })
     }
 
+    console.log(localSelection);
     this.refreshQuantity()
     this.refreshSubTotal();
     this.refreshTotal();
@@ -128,9 +174,8 @@ class Cart {
 
     for (let i = 0; i < orderDivs.length; i++) {
       let orderDivParent = orderDivs[i];
-      let productFounded = localSelection.find( product => product.id == orderDivParent.dataset.id);
-      orderDivParent.querySelector('.counterInput').value = productFounded.quantity;
-      this.setToLocal('cartSelection', localSelection)
+      let productFound = localSelection.find( product => product.id == orderDivParent.dataset.id);
+      orderDivParent.querySelector('.counterInput').value = productFound.quantity;
     }
   }
 
