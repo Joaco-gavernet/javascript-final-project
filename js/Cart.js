@@ -8,81 +8,92 @@ class Cart {
     }
   }
 
-  getFromLocal (key) {
-    return localStorage[`${key}`] ? JSON.parse(localStorage.getItem(`${key}`)) : [];
-  }
-
-  setToLocal (name, value) {
-    return localStorage[`${name}`] = JSON.stringify(value);
-  }
-
   requestSearch (searchingId, property = undefined) {
+    let result;
     this.request.forEach( product => {
       if (product.id == searchingId) {
-        return product;
+        result = product;
         // if (property) {
         //   return product.property;
         // }
         // return product;
       }
     })
+    return result;
   }
 
-  addNewProduct (demand) { // intento de agregar mas informacion al Local Storage
-    let localSelection = this.getFromLocal('cartSelection');
+  addNewProduct (demand) {
+    let localSelection = getFromLocal('cartSelection');
 
     if (!JSON.stringify(localSelection).includes(demand.id)) { // paso a string la seleccion para corroborar si el producto ya fue agregado
       let arrayDemand = {id: demand.id, price: JSON.parse(demand.price), quantity: demand.quantity = 1} // construyo el array
       localSelection.push(arrayDemand); // push
-      this.setToLocal('cartSelection', localSelection) // cargo al Local Storage
+      setToLocal('cartSelection', localSelection) // cargo al Local Storage
     } else { // si ya esta en el carrito
       let item = localSelection.find( element => element.id == demand.id) // lo busco por su id
       item.quantity ++; // lo incremento
-      this.setToLocal('cartSelection', localSelection); // cargo al Local Storage
+      setToLocal('cartSelection', localSelection); // cargo al Local Storage
     }
   }
 
   deleteProduct (deleteId) {
-    let localSelection = this.getFromLocal('cartSelection');
+    let localSelection = getFromLocal('cartSelection');
 
     if (JSON.stringify(localSelection).includes(deleteId)) {
       let item = localSelection.find( element => element.id == deleteId) // lo busco por su id
       let index = localSelection.indexOf(item);
       localSelection.splice(index, 1)
-      this.setToLocal('cartSelection', localSelection)
+      setToLocal('cartSelection', localSelection)
     }
   }
 
   buildItems () {
-    let localSelection = this.getFromLocal('cartSelection');
+    let localSelection = getFromLocal('cartSelection');
     let contenedorSelectedProducts = document.querySelector('.selectedProducts');
     contenedorSelectedProducts.innerHTML = "";
   
     localSelection.forEach( searching => {
-      this.request.forEach( product => {
-        if (product.id == searching.id) {
-          contenedorSelectedProducts.innerHTML += selectedProductBuilder(product);
-        }
-      })
+      // this.request.forEach( product => {
+      //   if (product.id == searching.id) {
+      //     contenedorSelectedProducts.innerHTML += selectedProductBuilder(product);
+      //   }
+      // })
+
+      let result = this.requestSearch(searching.id);
+      contenedorSelectedProducts.innerHTML += selectedProductBuilder(result);
     })
   }
 
   cleanLocal () { // metodo para limpiar los productos en el Local con menos de 1 unidad
-    let localSelection = this.getFromLocal('cartSelection');
+    let localSelection = getFromLocal('cartSelection');
     localSelection.forEach( searching => {
       if (searching.quantity < 1 || searching.quantity == 'null') {
         let index = localSelection.indexOf(searching);
         localSelection.splice(index, 1);
-        this.setToLocal('cartSelection', localSelection);
-        this.refresh()
+        setToLocal('cartSelection', localSelection);
+        // this.refresh()
       }
     })
-    debugger;
     this.buildItems()
   }
 
+  confirmPurchase (event) {
+    event.preventDefault();
+    let localSelection = getFromLocal('cartSelection');
+    console.log(localSelection);
+    let name = prompt('Ingrese su nombre completo');
+    let contact = prompt('Ingrese su numero de telefono o correo electronico');
+    let address = prompt('Ingrese su direccion');
+    alert('Su pedido estara confirmado cuando le llegue un aviso.');
+    console.log(`
+    Nombre: ${name}
+    Contacto: ${contact}
+    Direccion: ${address}
+    `);
+  }
+
   refresh () {
-    let localSelection = this.getFromLocal('cartSelection');
+    let localSelection = getFromLocal('cartSelection');
     
     this.cleanLocal();
 
@@ -96,51 +107,6 @@ class Cart {
     })
 
 
-    let selectedProducts = document.querySelectorAll('.orderDiv'); 
-    selectedProducts.forEach( product => {
-      let counterInput = product.querySelector('.counterInput');
-      counterInput.addEventListener('change', () => {
-        let item = localSelection.find( element => element.id == product.dataset.id);
-        item.quantity = parseInt(counterInput.value);
-        this.setToLocal('cartSelection', localSelection)
-        this.refresh();
-      })
-    })
-
-    // ///////////////////////////////////////////////////////////////////////////
-    // /////////////////////WORKING IN HERE///////////////////////////////////////
-    // ///////////////////////////////////////////////////////////////////////////
-
-    // let selectedProducts = document.querySelectorAll('.orderDiv');
-    // selectedProducts.forEach( product => {
-    //   let counterInput = product.querySelector('.counterInput');
-    //   counterInput.addEventListener('change', () => {
-    //     let item = localSelection.find( element => element.id == product.dataset.id);
-    //     item.quantity = parseInt(counterInput.value);
-    //     this.setToLocal('cartSelection', localSelection)
-    //     this.refresh();
-    //   })
-    // })
-
-    // function corroborateQuantity () {
-    //   let counterInputGroup = document.querySelectorAll('.counterInput');
-    //   let localSelection = this.getFromLocal('cartSelection');
-    //   let item = localSelection.find( element => element.id == product.dataset.id);
-    //   item.quantity = parseInt(counterInput.value);
-    //   this.setToLocal('cartSelection', localSelection)
-    //   this.refresh();
-    // }
-
-    // let counterInputGroup = document.querySelectorAll('.counterInput')
-    // for (let i in counterInputGroup) {
-    //   counterInputGroup[i].addEventListener('change', corroborateQuantity);
-    // }
-
-    // ///////////////////////////////////////////////////////////////////////////
-    // /////////////////////UNTIL THIS PART///////////////////////////////////////
-    // ///////////////////////////////////////////////////////////////////////////
-
-
     if (!localSelection.length > 0) {
       document.querySelector('.selectedProducts__options').style.display = 'none';
     } else {
@@ -150,26 +116,29 @@ class Cart {
         localStorage.clear()
         this.refresh()
       })
-      document.querySelector('.selectedProducts__confirmButton').addEventListener('click', (event) => {
-        event.preventDefault()
-        localStorage.clear()
-        this.refresh()
-      })
+      document.querySelector('.selectedProducts__confirmButton').addEventListener('click', (event) => {this.confirmPurchase(event)}, {once:true})
     }
 
-    console.log(localSelection);
+    let counterInputGroup = document.querySelectorAll('.counterInput')
+    counterInputGroup.forEach( counterInput => {
+      counterInput.addEventListener('change', () => {
+        corroborateQuantity(counterInput);
+        this.refresh();
+      });
+    })
+
     this.refreshQuantity()
     this.refreshSubTotal();
     this.refreshTotal();
   }
 
   modifyQuantity (modifier) {
-    let selection = this.getFromLocal('cartSelection')
+    let selection = getFromLocal('cartSelection')
     console.log(selection + modifier);
   }
 
   refreshQuantity () {
-    let localSelection = this.getFromLocal('cartSelection')
+    let localSelection = getFromLocal('cartSelection')
     let orderDivs = document.querySelectorAll('.orderDiv')
 
     for (let i = 0; i < orderDivs.length; i++) {
@@ -180,7 +149,7 @@ class Cart {
   }
 
   refreshSubTotal () {
-    let localSelection = this.getFromLocal('cartSelection')
+    let localSelection = getFromLocal('cartSelection')
     let subtotals = document.querySelectorAll('.subtotalPrice__value');
     for (let i in localSelection) {
       let subtotal = localSelection[i].price * localSelection[i].quantity;

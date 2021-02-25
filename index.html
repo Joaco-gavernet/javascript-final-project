@@ -64,13 +64,19 @@
 
   <section class="contactanos">
     <h3 class="contactanosH3">Contactanos</h3>
-    <form action="/" method="GET" class="form">
+
+    <form 
+    action=”mailto:cocogavernet@gmail.com” 
+    method="POST" 
+    enctype="multipart/form-data"
+    class="form">
     
+      <!-- <h3 class="message">No se ha podido validar su direccion e-mail</h3> -->
       <input type="text" id="name" class="name" placeholder="name">
       <input type="text" id="instagram" class="instagram" placeholder="instagram">
       <input type="text" id="email" class="email" placeholder="email">
-      <input type="text" id="description" class="description" placeholder="description">
-      <input type="button" id="button" class="button" value="Enviar">
+      <textarea class="description" cols="30" rows="10" placeholder="description"></textarea>
+      <input type="submit" id="button" class="button" value="Enviar">
 
     </form>
   </section>

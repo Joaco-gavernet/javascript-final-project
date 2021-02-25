@@ -43,6 +43,10 @@
       @include font(1.2rem, normal, none);
       transition: all 1s ease-in;
 
+      &:focus {
+        transform: scale(1.05);
+      }
+
       &:hover {
         transform: scale(1.05);
       }
@@ -275,7 +279,7 @@
       transition: all, 1s;
 
       &:hover {
-        background: #AE0F09;
+        background: $color-alerta;
         transform: scale(1.08);
       }
     }
@@ -296,7 +300,7 @@
       transition: all, 1s;
 
       &:hover {
-        background: #438A2E;
+        background: $color-positivo;
         transform: scale(1.08);
       }
     }

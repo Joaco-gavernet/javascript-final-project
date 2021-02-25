@@ -7,8 +7,10 @@
   <meta name="keywords" content="Rellenar">
   <!-- Link a estilos -->
   <link rel="stylesheet" href="css/main.css">
+  <!-- Link para envio por mail -->
+  <script defer src="https://smtpjs.com/v3/smtp.js"></script>
   <!-- Link a Sweet Alert -->
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- Link a JQuery -->
   <script 
     src="https://code.jquery.com/jquery-3.5.1.min.js" 
@@ -85,13 +87,8 @@
     </ul>
 
     <div class="selectedProducts__options">
-      <a href="catalogo.html">
-        <input type="button" value="Vaciar pedido" class="selectedProducts__clearButton">
-      </a>
-  
-      <a href="catalogo.html">
-        <input type="button" value="Confirmar pedido" class="selectedProducts__confirmButton">
-      </a>
+      <input type="button" value="Vaciar pedido" class="selectedProducts__clearButton">
+      <input type="button" value="Confirmar pedido" class="selectedProducts__confirmButton">
     </div>
 
   </div>

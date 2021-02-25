@@ -83,3 +83,18 @@ function decreaseCount(element) {
   }
 }
 // --------------------------------------
+
+function getFromLocal (key) {
+  return localStorage[`${key}`] ? JSON.parse(localStorage.getItem(`${key}`)) : [];
+}
+
+function setToLocal (name, value) {
+  return localStorage[`${name}`] = JSON.stringify(value);
+}
+
+function corroborateQuantity (product) {
+  let localSelection = getFromLocal('cartSelection');
+  let item = localSelection.find( element => element.id == product.dataset.id);
+  item.quantity = parseInt(product.value);
+  setToLocal('cartSelection', localSelection);
+}

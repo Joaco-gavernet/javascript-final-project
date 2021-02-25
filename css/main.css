@@ -126,7 +126,7 @@ a:hover {
 
 .contactanos {
   width: 100%;
-  height: 80vh;
+  min-height: 80vh;
   background: #fffdf8;
   padding: 50px 40px;
   display: flex;
@@ -145,6 +145,17 @@ a:hover {
   flex-flow: column;
   justify-content: space-around;
   align-items: center;
+  background: #73937Ecd;
+  padding: 40px;
+  border-radius: 5px;
+}
+.contactanos .form .message {
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-transform: none;
+  color: #AE0F09;
+  border: none;
+  border-radius: 5px;
 }
 .contactanos .form .name,
 .contactanos .form .instagram,
@@ -153,6 +164,9 @@ a:hover {
   min-width: 500px;
   margin: 10px 0;
   padding: 10px 20px;
+  border: 1px solid #1a1a1a;
+  border-radius: 5px;
+  outline: none;
   font-size: 1.2rem;
   font-weight: normal;
   text-transform: none;
@@ -221,6 +235,9 @@ a:hover {
   font-weight: normal;
   text-transform: none;
   transition: all 1s ease-in;
+}
+.productosCatalogo .fieldset .searchBar:focus {
+  transform: scale(1.05);
 }
 .productosCatalogo .fieldset .searchBar:hover {
   transform: scale(1.05);
