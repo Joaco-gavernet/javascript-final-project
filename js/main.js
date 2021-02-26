@@ -9,6 +9,18 @@ function readyFunction () {
 function main() {
   let carrito = new Cart(resp); // instancio el carrito
 
+  $(".portada__linkForm").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".contactanos").offset().top
+    }, 2000);
+  });
+
+  $(".portada__linkConocenos").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".conocenos").offset().top
+    }, 2000);
+  });
+
   if (document.querySelector('.productosCatalogo__ul')) {
     let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
     resp.forEach(function (product) {
@@ -24,11 +36,16 @@ function main() {
     searchBar.addEventListener('keyup', () => {searchFor(resp)});
   }
 
-
-  let cartCounter = document.querySelectorAll('.cartCounter');
-  if (cartCounter.textContent = undefined) { // CORROBORO CANTIDAD DE PRODUCTOS EN EL CARRITO
-    cartCounter.style.display = 'none';
-  }
+  // futura logica para mostrar el contador de elementos en el carrito 
+  // let cartCounter = document.querySelector('.cartCounter');
+  // let localSelection = getFromLocal('cartSelection');
+  // if (Object.keys(localSelection).length === 0) {
+  //   console.log('Local Selection is empty');
+  //   cartCounter.style.display = 'none';
+  // } else {
+  //   // cartCounter.textContent = localSelection.quantity;
+  //   localSelection.quantity;
+  // }
 
   // Desde aca iba todo adentro del DOMContentLoaded
 
@@ -37,14 +54,12 @@ function main() {
   $('.cartOpener').on('click', cartOpens);
   function cartOpens() {
     if (!cartOpen) {
-      $('.productosCatalogo').css('display', 'none');
-      $('.selectedProducts-container').css('display', 'flex');
-      // $('.selectedProducts__buyButton').click(event => {event.preventDefault()}) // preventDefault
+      openCart();
+      $('.selectedProducts__buyButton').click(closeCart)
       carrito.refresh();
       cartOpen = true;
     } else {
-      $('.productosCatalogo').css('display', 'flex');
-      $('.selectedProducts-container').css('display', 'none');
+      closeCart();
       cartOpen = false;
     }
   }

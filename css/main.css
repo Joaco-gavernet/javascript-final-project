@@ -94,6 +94,37 @@ a:hover {
   text-transform: uppercase;
   font-style: italic;
 }
+.portada .portada__links, .portadaCatalogo .portada__links {
+  display: flex;
+  flex-flow: normal;
+  justify-content: center;
+  align-items: center;
+}
+.portada .portada__links .portada__linkForm, .portadaCatalogo .portada__links .portada__linkForm {
+  z-index: 1;
+  background: #fffdf8;
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  margin-left: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+}
+.portada .portada__links .portada__linkForm:hover, .portadaCatalogo .portada__links .portada__linkForm:hover {
+  background: #73937Ecd;
+}
+.portada .portada__links .portada__linkConocenos, .portadaCatalogo .portada__links .portada__linkConocenos {
+  z-index: 1;
+  background: #fffdf8;
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+}
+.portada .portada__links .portada__linkConocenos:hover, .portadaCatalogo .portada__links .portada__linkConocenos:hover {
+  background: #73937Ecd;
+}
 
 .conocenos {
   display: flex;
@@ -203,9 +234,6 @@ a:hover {
 .portadaCatalogo .portada__nav .nav__ul .nav__ulLi a:hover {
   color: #414141;
 }
-.portadaCatalogo .portada__nav .cartOpener {
-  cursor: pointer;
-}
 .portadaCatalogo::after {
   display: none;
 }
@@ -213,14 +241,22 @@ a:hover {
 .productosCatalogo {
   background: #f0eae0cb;
   display: flex;
-  flex-flow: wrap;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
+}
+.productosCatalogo .productosCatalogoH3 {
+  margin-top: 40px;
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 3px;
+  line-height: 1.2;
 }
 .productosCatalogo .fieldset {
   width: 90%;
   max-width: 600px;
-  margin-top: 50px;
   padding: 20px 10px;
   border: none;
   display: flex;

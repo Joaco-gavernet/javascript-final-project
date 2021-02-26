@@ -11,10 +11,6 @@
         color: rgb(65, 65, 65);
       }
     }
-
-    .cartOpener {
-      cursor: pointer;
-    }
   }
 
   &::after {
@@ -24,12 +20,22 @@
 
 .productosCatalogo {
   background: #f0eae0cb;
-  @include flex(flex, wrap, center, center);
+  @include flex(flex, column, center, center);
+
+  .productosCatalogoH3 {
+    margin-top: 40px;
+    @include font(3rem, 800, uppercase);
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 3px;
+    line-height: 1.2;
+
+    // width: 60%;
+    // text-align: center;
+  }
 
   .fieldset{
     width: 90%;
     max-width: 600px;
-    margin-top: 50px;
     padding: 20px 10px;
     border: none;
     display: flex;

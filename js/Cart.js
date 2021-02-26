@@ -1,5 +1,5 @@
 class Cart {
-  constructor (resp, selection) {
+  constructor (resp) {
     this.request = resp;
     this.selection = [];
     this.total = 0;
@@ -13,10 +13,10 @@ class Cart {
     this.request.forEach( product => {
       if (product.id == searchingId) {
         result = product;
-        // if (property) {
-        //   return product.property;
-        // }
-        // return product;
+        if (property) {
+          return product.property;
+        }
+        return product;
       }
     })
     return result;
@@ -53,12 +53,6 @@ class Cart {
     contenedorSelectedProducts.innerHTML = "";
   
     localSelection.forEach( searching => {
-      // this.request.forEach( product => {
-      //   if (product.id == searching.id) {
-      //     contenedorSelectedProducts.innerHTML += selectedProductBuilder(product);
-      //   }
-      // })
-
       let result = this.requestSearch(searching.id);
       contenedorSelectedProducts.innerHTML += selectedProductBuilder(result);
     })

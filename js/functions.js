@@ -98,3 +98,13 @@ function corroborateQuantity (product) {
   item.quantity = parseInt(product.value);
   setToLocal('cartSelection', localSelection);
 }
+
+function openCart () {
+  $('.productosCatalogo').css('display', 'none');
+  $('.selectedProducts-container').css('display', 'flex');
+}
+
+function closeCart () {
+  $('.productosCatalogo').css('display', 'flex');
+  $('.selectedProducts-container').css('display', 'none');
+}
