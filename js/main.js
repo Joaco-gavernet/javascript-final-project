@@ -23,11 +23,11 @@ function main() {
 
   
   document.querySelector('#buttonSubmitForm').addEventListener('click', (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     console.log(event.target);
     getFormData();
   })
-  
+
 
   if (document.querySelector('.productosCatalogo__ul')) {
     let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
