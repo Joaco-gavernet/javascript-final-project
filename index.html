@@ -23,72 +23,87 @@
   <title>Patio Interno | Libreria | City Bell | Inicio</title>
 </head>
 <body>
-  <main class="portada">
-    <nav class="portada__nav">
-      <a href="/">
-        <img src="img/logo-simple-patio-interno.png" alt="Logo Patio Interno" class="nav__img">
-      </a>
-      <ul class="nav__ul">
-        <li class="nav__ulLi">
-          <a href="/">Inicio</a>
-        </li>
-        <li class="nav__ulLi">
-          <a href="catalogo.html">Catalogo</a>
-        </li>
-        <li class="cartCombo">
-          <a href="catalogo.html">
-            <img src="img/shopping-cart.png" alt="" class="cartOpener">
-          </a>
-          <!-- <h3 class="cartCounter">5</h3> -->
-        </li>
+  <div class="body">
 
-      </ul>
-    </nav>
-    <div class="portada__heading">
-      <h1 class="portada__headingH1">Patio Interno</h1>
-      <h4 class="portada__headingH4">La libreria que buscas</h4>
-    </div>
-    <div class="portada__links">
-      <img src="img/down-arrow (2).png" alt="Link a la seccion conocenos" class="portada__linkConocenos">
-      <img src="img/test.png" alt="Link a formulario de contacto" class="portada__linkForm">
-    </div>
-  </main>
+    <main class="portada">
+      <nav class="portada__nav">
+        <a href="/">
+          <img src="img/logo-simple-patio-interno.png" alt="Logo Patio Interno" class="nav__img">
+        </a>
+        <ul class="nav__ul">
+          <li class="nav__ulLi">
+            <a href="/">Inicio</a>
+          </li>
+          <li class="nav__ulLi">
+            <a href="catalogo.html">Catalogo</a>
+          </li>
+          <li class="cartCombo">
+            <a href="catalogo.html">
+              <img src="img/shopping-cart.png" alt="" class="cartOpener">
+            </a>
+            <!-- <h3 class="cartCounter">5</h3> -->
+          </li>
 
-  <section class="conocenos">
-    <div class="conocenos__div">
-      <h2 class="conocenos__h2">Conocenos</h2>
-      <p class="conocenos__p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium minus error recusandae non, libero beatae! Cum rem, minima ipsam et porro error dolorem eum, impedit iste eligendi sapiente. Blanditiis, id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil reprehenderit illum sequi deserunt sit quod excepturi doloremque omnis dicta, dolore repellendus possimus temporibus architecto voluptas perspiciatis reiciendis facilis maiores dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa, quisquam quae excepturi blanditiis aut repudiandae unde, corporis iure dignissimos ipsum amet officia, consequuntur quis asperiores incidunt architecto eos facilis?</p>
-    </div>
-  </section>
+        </ul>
+      </nav>
+      <div class="portada__heading">
+        <h1 class="portada__headingH1">Patio Interno</h1>
+        <h4 class="portada__headingH4">La libreria que buscas</h4>
+      </div>
+      <div class="portada__links">
+        <img src="img/down-arrow (2).png" alt="Link a la seccion conocenos" class="portada__linkConocenos">
+        <img src="img/test.png" alt="Link a formulario de contacto" class="portada__linkForm">
+      </div>
+    </main>
 
-  <!-- <section class="videoConocenos">
-    <video width="100%" height="100%" src="vid/intro-video-02.mp4" controls autoplay loop muted>
-    </video>
-  </section> -->
+    <section class="conocenos">
+      <div class="conocenos__div">
+        <h2 class="conocenos__h2">Conocenos</h2>
+        <p class="conocenos__p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium minus error recusandae non, libero beatae! Cum rem, minima ipsam et porro error dolorem eum, impedit iste eligendi sapiente. Blanditiis, id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil reprehenderit illum sequi deserunt sit quod excepturi doloremque omnis dicta, dolore repellendus possimus temporibus architecto voluptas perspiciatis reiciendis facilis maiores dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa, quisquam quae excepturi blanditiis aut repudiandae unde, corporis iure dignissimos ipsum amet officia, consequuntur quis asperiores incidunt architecto eos facilis?</p>
+      </div>
+    </section>
 
-  <section class="contactanos">
-    <h3 class="contactanosH3">Contactanos</h3>
+    <!-- <section class="videoConocenos">
+      <video width="100%" height="100%" src="vid/intro-video-02.mp4" controls autoplay loop muted>
+      </video>
+    </section> -->
 
-    <form 
-    method="POST" 
-    enctype="multipart/form-data"
-    action="https://formspree.io/f/xoqpoybv"
-    class="form">
+    <section class="contactanos">
+      <h3 class="contactanosH3">Contactanos</h3>
+
+      <form 
+      method="POST" 
+      enctype="multipart/form-data"
+      action="https://formspree.io/f/xoqpoybv"
+      class="form">
+      
+        <!-- <h3 class="message">No se ha podido validar su direccion e-mail</h3> -->
+        <input name="name" type="text" id="name" class="name" placeholder="name">
+        <input name="instagram" type="text" id="instagram" class="instagram" placeholder="instagram">
+        <input name="email" type="email" id="email" class="email" placeholder="email">
+        <textarea name="description" class="description" cols="30" rows="10" placeholder="description"></textarea>
+        <button type="submit" id="buttonSubmitForm" class="button">Enviar</button>
+
+      </form>
+    </section>
     
-      <!-- <h3 class="message">No se ha podido validar su direccion e-mail</h3> -->
-      <input name="name" type="text" id="name" class="name" placeholder="name">
-      <input name="instagram" type="text" id="instagram" class="instagram" placeholder="instagram">
-      <input name="email" type="email" id="email" class="email" placeholder="email">
-      <textarea name="description" class="description" cols="30" rows="10" placeholder="description"></textarea>
-      <button type="submit" id="buttonSubmitForm" class="button">Enviar</button>
+    <footer class="footerDesktop">
+      <a href="index.html">
+        <img src="img/logo-simple-patio-interno.png" alt="Logo Patio Interno" class="footerDesktop__img">
+      </a>
+    </footer>
+  </div>
 
-    </form>
-  </section>
-  
-  <footer class="footerDesktop">
-    <a href="index.html">
-      <img src="img/logo-simple-patio-interno.png" alt="Logo Patio Interno" class="footerDesktop__img">
-    </a>
-  </footer>
+  <div class="sorryMessage">
+    <h3 class="message__h3">Sorry!</h3>
+    <p class="message__p">This website is not able for mobile devices.</p>
+    <p class="message__p">Try opening it in your pc or laptop for better functionality.</p>
+    <br>
+    <hr size="4" width="70%">
+    <br>
+    <h3 class="message__h3">Perdon!</h3>
+    <p class="message__p">Este sitio web no esta adaptado para dispositivos mobiles.</p>
+    <p class="message__p">Intenta abriendolo en tu propia computadora o laptop.</p>
+  </div>
 </body>
 </html>

@@ -227,3 +227,35 @@
     }
   }
 } 
+
+.sorryMessage {
+  display: none;
+}
+
+
+
+@media (max-width: 1024px) {
+  .body {
+    display: none;
+  }
+
+  .sorryMessage {
+    width: 100%;
+    height: 100vh;
+    @include flex(flex, column, center, center);
+    background: $color-claro;
+    color: $color-oscuro;
+    
+    .message__h3 {
+      @include font(1.5rem, bold, normal);
+      text-align: center;
+      padding: 0 40px 10px 40px;
+    }
+    
+    .message__p {
+      @include font(1rem, normal, normal);
+      text-align: center;
+      padding: 0 40px 10px 40px;
+    }
+  }
+}
