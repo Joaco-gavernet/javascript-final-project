@@ -21,11 +21,18 @@ function main() {
     }, 1000);
   });
 
+  $('.footerDesktop__img').click(function() {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("main").offset().top
+    }, 1000);
+  })
+
   
   document.querySelector('#buttonSubmitForm').addEventListener('click', (event) => {
     // event.preventDefault();
     console.log(event.target);
     getFormData();
+    alert('Aun no es funcional este formulario')
   })
 
 
