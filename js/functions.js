@@ -108,3 +108,11 @@ function closeCart () {
   $('.productosCatalogo').css('display', 'flex');
   $('.selectedProducts-container').css('display', 'none');
 }
+
+function getFormData () {
+  let name = document.querySelector('.name').value;
+  let instagram = document.querySelector('.instagram').value;
+  let email = document.querySelector('.email').value;
+
+  console.log(name + ' ' + instagram + ' ' + email);
+}

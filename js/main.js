@@ -12,14 +12,22 @@ function main() {
   $(".portada__linkForm").click(function() {
     $([document.documentElement, document.body]).animate({
         scrollTop: $(".contactanos").offset().top
-    }, 2000);
+    }, 1000);
   });
 
   $(".portada__linkConocenos").click(function() {
     $([document.documentElement, document.body]).animate({
         scrollTop: $(".conocenos").offset().top
-    }, 2000);
+    }, 1000);
   });
+
+  
+  document.querySelector('#buttonSubmitForm').addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log(event.target);
+    getFormData();
+  })
+  
 
   if (document.querySelector('.productosCatalogo__ul')) {
     let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');

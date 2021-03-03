@@ -70,17 +70,17 @@
     <h3 class="contactanosH3">Contactanos</h3>
 
     <form 
-    action=”mailto:cocogavernet@gmail.com” 
     method="POST" 
     enctype="multipart/form-data"
+    action="https://formspree.io/f/xoqpoybv"
     class="form">
     
       <!-- <h3 class="message">No se ha podido validar su direccion e-mail</h3> -->
-      <input type="text" id="name" class="name" placeholder="name">
-      <input type="text" id="instagram" class="instagram" placeholder="instagram">
-      <input type="text" id="email" class="email" placeholder="email">
-      <textarea class="description" cols="30" rows="10" placeholder="description"></textarea>
-      <input type="submit" id="button" class="button" value="Enviar">
+      <input name="name" type="text" id="name" class="name" placeholder="name">
+      <input name="instagram" type="text" id="instagram" class="instagram" placeholder="instagram">
+      <input name="email" type="email" id="email" class="email" placeholder="email">
+      <textarea name="description" class="description" cols="30" rows="10" placeholder="description"></textarea>
+      <button type="submit" id="buttonSubmitForm" class="button">Enviar</button>
 
     </form>
   </section>
