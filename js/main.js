@@ -27,15 +27,15 @@ function main() {
     }, 1000);
   })
 
+  if (!document.querySelector('.productosCatalogo__ul')) {
+    document.querySelector('#buttonSubmitForm').addEventListener('click', (event) => {
+      // event.preventDefault();
+      console.log(event.target);
+      getFormData();
+      alert('Aun no es funcional este formulario')
+    })
+  }
   
-  document.querySelector('#buttonSubmitForm').addEventListener('click', (event) => {
-    // event.preventDefault();
-    console.log(event.target);
-    getFormData();
-    alert('Aun no es funcional este formulario')
-  })
-
-
   if (document.querySelector('.productosCatalogo__ul')) {
     let contenedorCatalogo = document.querySelector('.productosCatalogo__ul');
     resp.forEach(function (product) {
