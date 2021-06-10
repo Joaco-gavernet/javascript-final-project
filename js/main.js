@@ -32,7 +32,6 @@ function main() {
       // event.preventDefault();
       console.log(event.target);
       getFormData();
-      alert('Aun no es funcional este formulario')
     })
   }
   
